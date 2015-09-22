@@ -20,12 +20,13 @@
     <div class="wrapper">
     <div class="header">
         <h3>ISN Admin Panel</h3>
-        <ul>
+        <ul style="width:75%;">
             <li><a href="<?php echo $this->webroot;?>dashboard/">Home</a></li>
             <li><a href="<?php echo $this->webroot;?>dashboard/pages">Pages</a></li>
             <li><a href="<?php echo $this->webroot;?>dashboard/media">Media</a></li>
             <li><a href="<?php echo $this->webroot;?>dashboard/settings">Settings</a></li>
             <li><a href="<?php echo $this->webroot;?>dashboard/updates">Updates</a></li>
+            <li><a href="<?php echo $this->webroot;?>dashboard/projects">Projects</a></li>
             <li><a href="<?php echo $this->webroot;?>dashboard/slider">Slider</a></li>
             <li><a href="<?php echo $this->webroot;?>dashboard/logout">Logout</a></li>
             

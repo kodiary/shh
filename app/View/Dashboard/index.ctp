@@ -17,8 +17,3 @@
     <strong>Settings:</strong>
     Settings will let you change the username, email and password of the admin panel of your site.
 </p>
-<hr />
-<p>
-    <strong>Settings:</strong>
-    Settings will let you change the username, email and password of the admin panel of your site.
-</p>

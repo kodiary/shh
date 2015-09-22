@@ -428,6 +428,67 @@ class DashboardController extends AppController
             $this->Update->delete($id);
             $this->redirect('updates');
         }
+        
+        function projects()
+        {
+            //die('here');
+            $this->loadModel('Project');
+            $q = $this->Project->find('all',array('order'=>'id DESC'));
+            $this->set('projects',$q);
+        }
+        function addProject()
+        {
+            $this->loadModel('Project');
+            $this->loadModel('Page');
+            $this->set('acts',$this->Page->find('all',array('conditions'=>array('parent'=>4))));
+            if(isset($_POST['title'])&& $_POST['title'])
+            {
+                $file = $_FILES['file']['name'];
+                 $arr = explode('.',$file);
+                $ext = end($arr);
+                $rand = rand(100000,999999).'_'.rand(100000,999999).'.'.$ext;
+                move_uploaded_file($_FILES['file']['tmp_name'],APP.'webroot/doc/'.$rand);
+                $_POST['image'] = $rand;
+                $_POST['added_on'] = date('Y-m-d');
+                $whiteSpace = '';  //if you dnt even want to allow white-space set it to ''
+                $pattern = '/[^a-zA-Z0-9-_'  . $whiteSpace . ']/u';
+                $_POST['slug'] = preg_replace($pattern, '_', (string) $_POST['title']);
+                
+                if($this->Project->find('first',array('conditions'=>array('slug'=>$_POST['slug']))))
+                $_POST['slug']=$_POST['slug'].'_'.rand(100,999);
+                $this->Project->create();
+                $this->Project->save($_POST);
+                $this->redirect('projects');
+            }
+        }
+        function editProject($id)
+        {
+            $this->loadModel('Project');
+            $this->loadModel('Page');
+            $this->set('acts',$this->Page->find('all',array('conditions'=>array('parent'=>4))));
+            $this->set('model',$this->Project->findById($id));
+            if(isset($_POST['title'])&& $_POST['title'])
+            {
+                if(isset($_FILES) && $_FILES['file']['name']){
+                $file = $_FILES['file']['name'];
+                 $arr = explode('.',$file);
+                $ext = end($arr);
+                $rand = rand(100000,999999).'_'.rand(100000,999999).'.'.$ext;
+                move_uploaded_file($_FILES['file']['tmp_name'],APP.'webroot/doc/'.$rand);
+                $_POST['image'] = $rand;
+                }
+                //$_POST['added_on'] = date('Y-m-d');
+                $this->Project->id = $id;
+                $this->Project->save($_POST);
+                $this->redirect('projects');
+            }
+        }
+        function deleteProject($id)
+        {
+            $this->loadModel('Project');
+            $this->Project->delete($id);
+            $this->redirect('project');
+        }
         function slider(){
             $this->loadModel('Slider');
             $q = $this->Slider->find('all',array('order'=>'id DESC'));
