@@ -1,0 +1,363 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Islami Sangh Nepal</title>
+<script src="<?php echo $this->webroot;?>js/jquery.min.js"></script>
+<script src="<?php echo $this->webroot;?>slider/jquery.bxslider.js"></script>
+<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"/>
+<link rel="stylesheet" href="<?php echo $this->webroot;?>slider/jquery.bxslider.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="author" content="Anwar Ali - Web-Nepal" />
+<meta name="keywords" content="Islami, Islam, Nepal, Islami Sangh Nepal, ISN, ISN Nepal, Islami Sangh Nepal, Nazrul Hasan Falahi, Gulam Rasul Falahi, Dr. Shamim, Abbas Chaudhari, Tahir Hussain Nadvi, Islamic Media, Islamic Publication, Islam and Nepal, Islamic Broadcasting, Jamat-e-Islami Nepal,Millat-E-Islamiya Nepal, Nepal Muslims, Islamic Sangh, Dawah, Islah, Dawah in Nepal" />
+<meta name="description" content="Islami Sangh, Nepal (previously known as Islami Yuwa Sangh, Nepal) was founded 28 years ago with the purpose of striving to establish Islam in its totality, in all aspects of human life as well as collective; from the reform of inner self to the external world. Islam provides to all section of society, the best means of equity and justice, wefare and reform, progress and prosperity, irrespective of race, region, or language." />
+
+<link href="<?php echo $this->webroot;?>css/helper.css" media="screen" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800italic,800' rel='stylesheet' type='text/css'>
+
+<!-- Beginning of compulsory code below -->
+
+<link href="<?php echo $this->webroot;?>css/dropdown/dropdown.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="<?php echo $this->webroot;?>css/dropdown/themes/nvidia.com/default.advanced.css" media="screen" rel="stylesheet" type="text/css" />
+
+<link rel="shortcut icon" href="<?php echo $this->webroot;?>favicon.ico" type="image/x-icon">
+<link rel="icon" href="<?php echo $this->webroot;?>favicon.ico" type="image/x-icon">
+<!-- / END -->
+
+</head>
+<body class="nvidia-com">
+<div id="fb-root"></div>
+<style>
+    
+    
+    .archive { display:block; }
+    .contentarchive { display:none; padding-top: 5px;font-size:13px;}
+    .contentarchive a{color:green;display:block;}
+  </style>
+<script>
+    $(function(){
+       $('.archive').click(function(e){
+        e.preventDefault();
+        $(this).closest('li').find('.contentarchive').slideToggle();
+      }); 
+    });
+</script>
+<!-- AddThis Smart Layers BEGIN -->
+<!-- Go to http://www.addthis.com/get/smart-layers to customize -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53551fdf0354dd89"></script>
+<script type="text/javascript">
+  addthis.layers({
+    'theme' : 'transparent',
+    'share' : {
+      'position' : 'left',
+      'numPreferredServices' : 5
+    }   
+  });
+</script>
+<!-- AddThis Smart Layers END -->
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=283049271864933&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="header">
+<h1 class="left"><div class="logo"><img src="<?php echo $this->webroot;?>images/logo.png" alt="Logo" width="100" /></div><div class="company"><img src="<?php echo $this->webroot;?>images/company.png"/></div><div class="clear"></div></h1>
+
+<!-- Beginning of compulsory code below -->
+
+<ul class="dropdown dropdown-horizontal right">
+	<li><a href="<?php echo $this->webroot;?>">Home</a></li>
+	<li>
+        <a href="" class="dir" onclick="return false;">About Us</a>
+        <ul>
+			<li><a href="<?php echo $this->webroot;?>view/history">History</a></li>
+			<li><a href="<?php echo $this->webroot;?>view/ideology">Ideology</a></li>
+			<li><a href="<?php echo $this->webroot;?>view/mission">Mission</a></li>
+			<li><a href="<?php echo $this->webroot;?>view/constitution">Constitution</a></li>
+			<li><a href="<?php echo $this->webroot;?>view/structure">Organizational Structure</a></li>
+			<li><a href="<?php echo $this->webroot;?>view/zonal-headquarters">Zonal Headquarters</a></li>
+			<li><a href="<?php echo $this->webroot;?>view/policy">Policy Program</a></li>
+			
+		</ul>
+    </li>
+	<li><a href="./" class="dir" onclick="return false;">Departments</a>
+		<ul>
+			<?php 
+            $q = $this->requestAction('/pages/getpages/3');
+            foreach($q as $d)
+            {
+                ?>
+                <li><a href="<?php echo $this->webroot;?>view/<?php echo $d['Page']['slug'];?>"><?php echo $d['Page']['title'];?></a></li>
+                <?php
+            }
+            ?>
+            
+		</ul>
+	</li>
+	<li><a href="./" class="dir" onclick="return false;">Activities</a>
+		<ul>
+			<?php 
+            $q = $this->requestAction('/pages/getpages/4');
+            foreach($q as $d)
+            {
+                ?>
+                <li><a href="<?php echo $this->webroot;?>view/<?php echo $d['Page']['slug'];?>"><?php echo $d['Page']['title'];?></a></li>
+                <?php
+            }
+            ?>
+		</ul>
+	</li>
+    <li><a href="./" class="dir" onclick="return false;">Media</a>
+        <ul>
+			<li><a href="<?php echo $this->webroot;?>media/Print">Print</a></li>
+			<li><a href="<?php echo $this->webroot;?>media/Publication">Publication</a></li>
+			<li><a href="<?php echo $this->webroot;?>media/Audio-Visual">Audio-Visual</a></li>
+            <li><a href="<?php echo $this->webroot;?>media/Broadcasting">Broadcasting</a></li>
+		</ul>
+	</li>
+	<li><a href="<?php echo $this->webroot;?>contact">Contact Us</a></li>
+	
+</ul>
+<div class="clear"></div>
+</div>
+<div class="content">
+<div class="contentin">
+    <div class="main left">
+    <?php echo $this->fetch('content'); ?>
+    </div>
+    <div class="sidebar right">
+        <h1 class="title"><span>Prayer times</span></h1>
+        <ul>
+            <li style="background: #e5e5e5;padding-top:10px;">
+                <center><iframe src="http://www.islamicfinder.org/prayer_service.php?country=nepal&city=kathmandu&state=00&zipcode=&latitude=27.7500&longitude=85.4167&timezone=5.75&HanfiShafi=2&pmethod=1&fajrTwilight1=10&fajrTwilight2=10&ishaTwilight=10&ishaInterval=30&dhuhrInterval=1&maghribInterval=1&dayLight=0&page_background=e5e5e5&table_background=FFFFFF&table_lines=666633&text_color=663333&link_color=666666&prayerFajr=Fajr&prayerSunrise=Sunrise&prayerDhuhr=Dhuhr&prayerAsr=Asr&prayerMaghrib=Maghrib&prayerIsha=Isha&lang=" frameborder=0 width=175 height=250 marginwidth=0 marginheight=0 scrolling="no"> </iframe></center>
+            </li>
+        </ul>
+        <h1 class="title"><span>Recent Uploads</span></h1>
+        <!-- AddThis Button BEGIN -->
+        <ul>
+                            
+                <?php 
+                $uploads = $this->requestAction('/pages/getrecent');
+                foreach($uploads as $u)
+                {
+                    if($u['Media']['file'])
+                    {
+                        $arr_e = explode('.',$u['Media']['file']);
+                        $end = end($arr_e);
+                        if(strtolower($end)=='pdf')
+                        {
+                            $thumb = 'pdf';
+                        }
+                        else
+                        if(strtolower($end)=='doc' || strtolower($end)=='docx')
+                        $thumb = 'doc';
+                        else
+                        $thumb = 'mp3';
+                    }
+                    else
+                    $thumb = 'youtube';
+                    ?>
+                    <li style="padding: 5px;border-bottom:1px dotted green;">
+                        <div class="left"><img src="<?php echo $this->webroot;?>images/<?php echo $thumb;?>.png" /></div>
+                        <div class="margin_left10 left" style="width: 250px;">
+                        <?php if($thumb=='pdf' || $thumb=='doc'){
+                            ?>
+                            <a href="javascript:void(0)" onclick="$('.popover2').html('<iframe src=\'https://docs.google.com/gview?url=<?php echo urlencode('http://islamisangh.org/doc/'.$u['Media']['file']);?>&embedded=true\' style=\'width:700px; height:630px;\' frameborder=\'0\'></iframe><p>');$('.popover2').attr('title','<?php echo $u['Media']['title'];?>');$('.popover2').dialog({modal:true,width:735});">
+                            <?php
+                        }
+                        elseif($thumb=='mp3' || $thumb=='youtube')
+                        {
+                            ?>
+                            <a href="javascript:void(0)" onclick="$('.popover2').load('<?php echo $this->webroot;?>pages/player/<?php echo $u['Media']['id'];?>');$('.popover2').attr('title','<?php echo $u['Media']['title'];?>');$('.popover2').dialog({modal:true,width:<?php if($u['Media']['file']){?>355<?php }else{?>555<?php }?>});">
+                            <?php
+                        }
+                        ?>
+                            
+                            <?php echo $u['Media']['title'];?>
+                            </a>
+                        </div>
+                        <div class="clear"></div></li>
+                    <?php
+                }
+                ?>
+            
+        </ul>
+        <p>&nbsp;</p>
+        <h1 class="title"><span>Find Us On Facebook</span></h1>
+        <div class="fb-like-box" data-href="https://www.facebook.com/islamisangh" data-width="350" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
+        <p>&nbsp;</p>
+        <h1 class="title"><span>Archives</span></h1>
+        <ul>
+        <?php
+        $year = date('Y');
+        for($i=2014;$i<=$year;$i++)
+        {
+            ?>
+            <li>
+              <a href='javascript:void(0);' class='archive'><?php echo $i;?></a>
+              <div class='contentarchive'>
+                <a href="<?php echo $this->webroot;?>media/Print/<?php echo $i;?>"><strong>Print</strong></a>
+                <a href="<?php echo $this->webroot;?>media/Publication/<?php echo $i;?>"><strong>Publication</strong></a>
+                <a href="<?php echo $this->webroot;?>media/Audio-Visual/<?php echo $i;?>"><strong>Audio Visual</strong></a>
+                <a href="<?php echo $this->webroot;?>gallery/<?php echo $i;?>"><strong>Activities Gallery</strong></a>
+              </div>
+            </li>
+            <?php
+        }
+        ?>
+            
+            
+          </ul>
+        <!--<p>&nbsp;</p>
+        <h1 class="title"><span>Quick links</span></h1>
+        <ul>
+            <?php $links = $this->requestAction('/pages/getLinks');?>
+            <?php
+            foreach($links as $l)
+            {
+                ?>
+                <li><a href="<?php echo $l['Link']['links'];?>" target="_blank"><?php echo $l['Link']['title'];?></a></li>
+                <?php
+            }
+            ?>
+            
+            
+        </ul>-->
+        <p>&nbsp;</p>
+        <h1 class="title"><span>Islamic Teachings</span></h1>
+        <ul>
+            <?php $links = $this->requestAction('/pages/getPages/1');?>
+            <?php
+            foreach($links as $l)
+            {
+                ?>
+                <li><a href="<?php echo $this->webroot?>view/<?php echo $l['Page']['slug'];?>"><?php echo $l['Page']['title'];?></a></li>
+                <?php
+            }
+            ?>
+        </ul>
+        <p>&nbsp;</p>
+        <h1 class="title"><span>Departments</span></h1>
+        <ul>
+            <?php $links = $this->requestAction('/pages/getPages/3');?>
+            <?php
+            foreach($links as $l)
+            {
+                ?>
+                <li><a href="<?php echo $this->webroot?>view/<?php echo $l['Page']['slug'];?>"><?php echo $l['Page']['title'];?></a></li>
+                <?php
+            }
+            ?>
+        </ul>
+        
+        
+        
+        
+        
+
+    </div>
+    <div class="clear"></div>
+    </div>
+    <div class="footertop">
+    <h1 class="left"><div class="logo"><img src="<?php echo $this->webroot;?>images/logo.png" alt="Logo" width="100" /></div><div class="company"><img src="<?php echo $this->webroot;?>images/company.png"/></div><div class="clear"></div></h1>
+    <div class="left" style="margin-left: 70px">
+        <div class="description" style="font-size: 12px;">
+            <strong style="font-size: 14px;">Islami Sangh Nepal</strong><br />
+            <strong>Millat-e-Islamia Building , Ghantaghar,Kathmandu, Nepal</strong><br />
+            <strong>P.O. Box: </strong> 2896<br />
+            <strong>Phone Number:</strong> +977-1-4226259, 4243722<br />
+            <strong>Fax: </strong> +977-1-4256912<br />
+            <strong>Email Address: </strong>isanghnp@gmail.com<br />        
+        </div>
+    </div>
+    <div class="left" style="margin-left: 70px;margin-top:15px;">
+        <a style="display: inline-block;" href="https://www.facebook.com/islamisangh" target="_blank"><img src="<?php echo $this->webroot;?>images/fb.png" width="35" height="35" /></a>
+        <a style="display: inline-block;" href="https://twitter.com/islamisangh" target="_blank"><img src="<?php echo $this->webroot;?>images/tt.png" width="35" height="35" /></a>
+        <a style="display: inline-block;" href="http://youtube.com/islamisangh"><img src="<?php echo $this->webroot;?>images/youtube.png" width="35" height="35" /></a>
+    </div>
+    <div class="clear"></div>
+    </div>
+    <div class="footerbot">
+        <div class="left blocks">
+            <h1>About Us</h1>
+            <ul>
+    			<li><a href="<?php echo $this->webroot;?>view/history">History</a></li>
+    			<li><a href="<?php echo $this->webroot;?>view/ideology">Ideology</a></li>
+    			<li><a href="<?php echo $this->webroot;?>view/mission">Mission</a></li>
+    			<li><a href="<?php echo $this->webroot;?>view/constitution">Constitution</a></li>
+    			<li><a href="<?php echo $this->webroot;?>view/structure">Organizational Structure</a></li>
+    			<li><a href="<?php echo $this->webroot;?>view/zonal-headquarters">Zonal Headquarters</a></li>
+    			<li><a href="<?php echo $this->webroot;?>view/policy">Policy Program</a></li>    			
+    		</ul>            
+        </div>
+        
+        <div class="left blocks">
+            <h1>Departments</h1>
+            <ul>
+			<?php 
+            $q = $this->requestAction('/pages/getpages/3');
+            foreach($q as $d)
+            {
+                ?>
+                <li><a href="<?php echo $this->webroot;?>view/<?php echo $d['Page']['slug'];?>"><?php echo $d['Page']['title'];?></a></li>
+                <?php
+            }
+            ?>            
+		    </ul>            
+        </div>
+        
+        <div class="left blocks">
+        <h1>Activities</h1>
+        <ul>
+			<?php 
+            $q = $this->requestAction('/pages/getpages/4');
+            foreach($q as $d)
+            {
+                ?>
+                <li><a href="<?php echo $this->webroot;?>view/<?php echo $d['Page']['slug'];?>"><?php echo $d['Page']['title'];?></a></li>
+                <?php
+            }
+            ?>
+		</ul>
+        </div>
+        
+        <div class="left blocks">
+        <h1>Media</h1>
+        <ul>
+			<li><a href="<?php echo $this->webroot;?>media/Print">Print</a></li>
+			<li><a href="<?php echo $this->webroot;?>media/Publication">Publication</a></li>
+			<li><a href="<?php echo $this->webroot;?>media/Audio-Visual">Audio-Visual</a></li>
+            <li><a href="<?php echo $this->webroot;?>media/Broadcasting">Broadcasting</a></li>
+		</ul>
+        </div>
+        
+        <div class="left blocks">
+        <h1>Islamic Teachings</h1>
+        <ul>
+            <?php $links = $this->requestAction('/pages/getPages/1');?>
+            <?php
+            foreach($links as $l)
+            {
+                ?>
+                <li><a href="<?php echo $this->webroot?>view/<?php echo $l['Page']['slug'];?>"><?php echo $l['Page']['title'];?></a></li>
+                <?php
+            }
+            ?>
+        </ul>
+        </div>
+        
+        <div class="clear"></div>
+    </div>   
+     
+</div>
+
+<div class="footer">
+        <center>&copy; Copyright 2014 Islami Sangh Nepal.<br />Powered By <a href="http://web-nepal.com/">Web-Nepal</a></center>
+    </div>
+<!-- / END -->
+<div  class="popover2" title="test" style="display: none;"> </div>
+</body>
+</html>

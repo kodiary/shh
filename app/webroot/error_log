@@ -1,0 +1,13 @@
+[12-May-2014 00:35:08 Asia/Katmandu] PHP Parse error:  syntax error, unexpected 'if' (T_IF), expecting function (T_FUNCTION) in /home/webnepal/public_html/isangh/app/Config/database.php on line 64
+[12-May-2014 00:35:47 Asia/Katmandu] PHP Parse error:  syntax error, unexpected 'if' (T_IF), expecting function (T_FUNCTION) in /home/webnepal/public_html/isangh/app/Config/database.php on line 64
+[12-May-2014 00:35:49 Asia/Katmandu] PHP Parse error:  syntax error, unexpected 'if' (T_IF), expecting function (T_FUNCTION) in /home/webnepal/public_html/isangh/app/Config/database.php on line 64
+[15-May-2014 03:54:25 Asia/Katmandu] PHP Parse error:  syntax error, unexpected end of file in /home/webnepal/public_html/isangh/app/View/Pages/index.ctp on line 187
+[15-May-2014 13:04:00 Asia/Katmandu] PHP Parse error:  syntax error, unexpected end of file, expecting '(' in /home/webnepal/public_html/isangh/app/Controller/DashboardController.php on line 107
+[28-May-2014 18:46:23 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/webnepal/public_html/islamisangh.org/app/Controller/DashboardController.php on line 399
+[28-May-2014 18:58:09 UTC] PHP Fatal error:  Call to a member function delete() on a non-object in /home/webnepal/public_html/islamisangh.org/app/Controller/DashboardController.php on line 423
+[28-May-2014 19:06:03 UTC] PHP Fatal error:  Call to a member function find() on a non-object in /home/webnepal/public_html/islamisangh.org/app/Controller/PagesController.php on line 59
+[28-May-2014 19:06:40 UTC] PHP Fatal error:  Call to a member function find() on a non-object in /home/webnepal/public_html/islamisangh.org/app/Controller/PagesController.php on line 59
+[29-May-2014 14:02:56 UTC] PHP Fatal error:  Call to a member function findBySlug() on a non-object in /home/webnepal/public_html/islamisangh.org/app/Controller/PagesController.php on line 109
+[08-Jun-2014 07:02:49 UTC] PHP Fatal error:  Call to a member function find() on a non-object in /home/webnepal/public_html/islamisangh.org/app/Controller/DashboardController.php on line 428
+[08-Jun-2014 07:04:47 UTC] PHP Fatal error:  Call to a member function find() on a non-object in /home/webnepal/public_html/islamisangh.org/app/Controller/DashboardController.php on line 428
+[03-Jul-2014 19:08:33 UTC] PHP Fatal error:  Call to a member function find() on a non-object in /home/webnepal/public_html/islamisangh.org/app/Controller/PagesController.php on line 107
