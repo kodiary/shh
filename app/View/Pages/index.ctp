@@ -193,97 +193,22 @@
           </div>
           <div class="col-md-9">
             <div class="owl-carousel owl-carousel3">
+                <?php foreach($projects as $pro){?>
               <div class="recent-work-item">
                 <em>
-                  <img src="<?php echo $this->webroot;?>assets/frontend/pages/img/works/img1.jpg" alt="Amazing Project" class="img-responsive">
+                  <img src="<?php echo $this->webroot;?>doc/<?php echo $pro['Project']['image'];?>" alt="Amazing Project" class="img-responsive">
                   <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
-                  <a href="<?php echo $this->webroot;?>assets/frontend/pages/img/works/img1.jpg" class="fancybox-button" title="Project Name #1" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
+                  <a href="<?php echo $this->webroot;?>doc/<?php echo $pro['Project']['image'];?>" class="fancybox-button" title="Project Name #1" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
                 </em>
                 <a class="recent-work-description" href="#">
-                  <strong>Amazing Project</strong>
-                  <b>SHH</b>
+                  <strong><?php echo $pro['Project']['title'];?></strong>
+                  <b>shh<?php// echo $pro['Project']['description'];?></b>
                 </a>
               </div>
-              <div class="recent-work-item">
-                <em>
-                  <img src="<?php echo $this->webroot;?>assets/frontend/pages/img/works/img2.jpg" alt="Amazing Project" class="img-responsive">
-                  <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
-                  <a href="<?php echo $this->webroot;?>assets/frontend/pages/img/works/img2.jpg" class="fancybox-button" title="Project Name #2" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                </em>
-                <a class="recent-work-description" href="#">
-                  <strong>Amazing Project</strong>
-                  <b>SHH</b>
-                </a>
-              </div>
-              <div class="recent-work-item">
-                <em>
-                  <img src="<?php echo $this->webroot;?>assets/frontend/pages/img/works/img3.jpg" alt="Amazing Project" class="img-responsive">
-                  <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
-                  <a href="<?php echo $this->webroot;?>assets/frontend/pages/img/works/img3.jpg" class="fancybox-button" title="Project Name #3" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                </em>
-                <a class="recent-work-description" href="#">
-                  <strong>Amazing Project</strong>
-                  <b>SHH</b>
-                </a>
-              </div>
-              <div class="recent-work-item">
-                <em>
-                  <img src="<?php echo $this->webroot;?>assets/frontend/pages/img/works/img4.jpg" alt="Amazing Project" class="img-responsive">
-                  <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
-                  <a href="<?php echo $this->webroot;?>assets/frontend/pages/img/works/img4.jpg" class="fancybox-button" title="Project Name #4" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                </em>
-                <a class="recent-work-description" href="#">
-                  <strong>Amazing Project</strong>
-                  <b>SHH</b>
-                </a>
-              </div>
-              <div class="recent-work-item">
-                <em>
-                  <img src="<?php echo $this->webroot;?>assets/frontend/pages/img/works/img5.jpg" alt="Amazing Project" class="img-responsive">
-                  <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
-                  <a href="<?php echo $this->webroot;?>assets/frontend/pages/img/works/img5.jpg" class="fancybox-button" title="Project Name #5" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                </em>
-                <a class="recent-work-description" href="#">
-                  <strong>Amazing Project</strong>
-                  <b>SHH</b>
-                </a>
-              </div>
-              <div class="recent-work-item">
-                <em>
-                  <img src="<?php echo $this->webroot;?>assets/frontend/pages/img/works/img6.jpg" alt="Amazing Project" class="img-responsive">
-                  <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
-                  <a href="<?php echo $this->webroot;?>assets/frontend/pages/img/works/img6.jpg" class="fancybox-button" title="Project Name #6" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                </em>
-                <a class="recent-work-description" href="#">
-                  <strong>Amazing Project</strong>
-                  <b>SHH</b>
-                </a>
-              </div>
-              <div class="recent-work-item">
-                <em>
-                  <img src="<?php echo $this->webroot;?>assets/frontend/pages/img/works/img3.jpg" alt="Amazing Project" class="img-responsive">
-                  <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
-                  <a href="<?php echo $this->webroot;?>assets/frontend/pages/img/works/img3.jpg" class="fancybox-button" title="Project Name #3" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                </em>
-                <a class="recent-work-description" href="#">
-                  <strong>Amazing Project</strong>
-                  <b>SHH</b>
-                </a>
-              </div>
-              <div class="recent-work-item">
-                <em>
-                  <img src="<?php echo $this->webroot;?>assets/frontend/pages/img/works/img4.jpg" alt="Amazing Project" class="img-responsive">
-                  <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
-                  <a href="<?php echo $this->webroot;?>assets/frontend/pages/img/works/img4.jpg" class="fancybox-button" title="Project Name #4" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
-                </em>
-                <a class="recent-work-description" href="#">
-                  <strong>Amazing Project</strong>
-                  <b>SHH</b>
-                </a>
-              </div>
+                <?php } ?>
+                
             </div>       
           </div>
-        </div>   
         <!-- END RECENT WORKS -->
 
         <!-- BEGIN TABS AND TESTIMONIALS -->

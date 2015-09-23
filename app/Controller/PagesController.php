@@ -37,6 +37,7 @@ function index()
     $this->loadModel('Media');
     $this->loadModel('Image');
     $this->loadModel('Update');
+    $this->loadModel('Project');
     $this->loadModel('Slider');
     $a = $this->Page->find('first',array('conditions'=>array('id'=>2)));
     $ac = $this->Page->find('all',array('conditions'=>array('parent'=>2)));
@@ -59,6 +60,7 @@ function index()
     $this->set('depart',$d);
     $this->set('child',$dc);
     $this->set('updates',$this->Update->find('all',array('limit'=>5,'order'=>'id DESC')));
+    $this->set('projects',$this->Project->find('all',array('limit'=>5,'order'=>'id DESC')));
     $this->set('slider',$this->Slider->find('all',array('limit'=>10,'order'=>'id DESC')));
 }
 function player($id)
