@@ -25,7 +25,7 @@
 
                 <div class="col-md-10 col-sm-8">
                     <h2 style="padding-top: 0;">
-                        <a href="<?php echo $this->webroot;?>pages/updates/<?php echo $up['Project']['slug'];?>"><?php echo $up['Project']['title'];?></a>
+                        <a href="<?php echo $this->webroot;?>pages/projects/<?php echo $up['Project']['slug'];?>"><?php echo $up['Project']['title'];?></a>
                     </h2>
                     <ul class="blog-info" style="margin: 0 0 12px;">
                         <li>

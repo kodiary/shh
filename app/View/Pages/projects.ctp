@@ -1,9 +1,12 @@
+<div class="main clearfix">
+<div class="container">
+<div class="row service-box margin-bottom-40">
 <h1 class="title"><span>Projects> <?php echo $pages['Project']['title'];?></span></h1>
-<div style="padding: 10px 0;border-bottom:1px dotted green">
-<div><img src="<?php echo $this->webroot;?>doc/<?php echo $pages['Project']['image'];?>" width="350" style="border:5px solid #f5f5f5;border-radius: 10px;" /></div>
+<div class="col-md-6">
+<div><img src="<?php echo $this->webroot;?>doc/<?php echo $pages['Project']['image'];?>" /></div>
 </div>
 
-<div class="description">
+<div class="col-md-6">
 <div class="small" style="font-size: 13px;">
 <?php
 if($act)
@@ -12,7 +15,13 @@ if($act)
     echo "<br/>";
 }
 ?>
+<ul class="blog-info" style="margin: 0 0 12px;">
+<li>
+<i class="fa fa-calendar"></i>
+<?php echo $pages['Project']['added_on'];?>
+</li>
+</ul>
 
-<span style="color: green;"><?php echo $pages['Project']['added_on'];?></span><br /><br />
 </div>
 <?php echo $pages['Project']['description'];?></div>
+</div></div></div>

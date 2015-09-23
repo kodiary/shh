@@ -1,4 +1,8 @@
-                        <h1 class="title"><span>Media > <?php echo $slug;if($year){?> > <?php echo $year; }?></span></h1>
+<div class="main clearfix">
+<div class="container">
+<div class="row service-box margin-bottom-40">
+                        
+                        <h2>Media ><small> <?php echo $slug;if($year){?>  <?php echo $year; }?></small></h2>
                         <div class="description">
                                     <?php
                                     foreach($media as $p)
@@ -29,6 +33,7 @@
                                     ?>
                                 </div>
                                 <div  class="popover mfp-hide" title="test"> </div>
+                                </div></div></div>
                                 <style>
         .mfp-hide{display:none;}
         
