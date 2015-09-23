@@ -1,7 +1,7 @@
 <div class="main clearfix">
 <div class="container">
 <div class="row service-box margin-bottom-40">
-<h1 class="title"><span>Projects <?php echo $pages['Project']['title'];?></span></h1>
+<h2 ><span>Projects<small> <?php echo $pages['Project']['title'];?></small></h2>
 <div class="col-md-6">
 <div><img src="<?php echo $this->webroot;?>doc/<?php echo $pages['Project']['image'];?>" /></div>
 </div>
