@@ -1,4 +1,4 @@
-<h1 class="title"><span>Activities Gallery > <?php if($year){?> > <?php echo $year; }?></span></h1>
+<h1 class="title"><span>Activities Gallery  <?php if($year){?> > <?php echo $year; }?></span></h1>
 <?php
 foreach($image as $img)
 {

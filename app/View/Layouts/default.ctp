@@ -72,11 +72,11 @@
           <ul>
             <li><a href="<?php echo $this->webroot;?>" target="">Home</a></li>
             <li><a href="<?php echo $this->webroot;?>view/about" target="">About Us</a></li>
-            <li><a href="event.html" target="">Events</a></li>
-            <li><a href="project.html" target="">Projects</a></li>
-            <li><a href="gallery.html" target="">Gallery</a></li>
-            <li><a href="#" target="">Publication</a></li>
-            <li><a href="contact.html" target="">Contact Us</a></li>
+            <li><a href="<?php echo $this->webroot;?>event" target="">Events</a></li>
+            <li><a href="<?php echo $this->webroot;?>project" target="">Projects</a></li>
+            <li><a href="<?php echo $this->webroot;?>gallery" target="">Gallery</a></li>
+            <li><a href="<?php echo $this->webroot;?>media/Publication" target="">Publication</a></li>
+            <li><a href="<?php echo $this->webroot;?>contact" target="">Contact Us</a></li>
 
             <!-- BEGIN TOP SEARCH -->
             
@@ -144,7 +144,7 @@
     <?php 
     }?>
 
-    <div class="main">
+    <div class="main clearfix">
         <?php echo $this->fetch('content'); ?>
       
     </div>

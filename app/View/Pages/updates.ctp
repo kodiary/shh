@@ -1,4 +1,4 @@
-<h1 class="title"><span>Updates > <?php echo $pages['Update']['title'];?></span></h1>
+<h1 class="title"><span>Updates ><?php echo $pages['Update']['title'];?></span></h1>
 <div style="padding: 10px 0;border-bottom:1px dotted green">
 <div><img src="<?php echo $this->webroot;?>doc/<?php echo $pages['Update']['image'];?>" width="350" style="border:5px solid #f5f5f5;border-radius: 10px;" /></div>
 </div>

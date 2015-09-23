@@ -116,17 +116,40 @@ function contact()
         $this->loadModel('Page');
         
         $q = $this->Update->findBySlug($slug);
+        
         $this->set('act',$this->Page->findById($q['Update']['act_id']));
         $this->set('pages',$q);
     }
     public function allUpdates()
     {
+        
         $this->loadModel('Update');        
         //$q = $this->Update->find('all',array('order'=>'id DESC'));
         $this->paginate= array('order'=>'id DESC','limit'=>'10');
         $q = $this->paginate('Update');
         $this->set('updates',$q);
     }
+    
+    public function projects($slug=null)
+    {
+        $this->loadModel('Project');
+        $this->loadModel('Page');
+        
+        $q = $this->Project->findBySlug($slug);
+        
+        $this->set('act',$this->Page->findById($q['Project']['act_id']));
+        $this->set('pages',$q);
+    }
+    public function allProjects()
+    {
+        
+        $this->loadModel('Project');        
+        //$q = $this->Update->find('all',array('order'=>'id DESC'));
+        $this->paginate= array('order'=>'id DESC','limit'=>'10');
+        $q = $this->paginate('Project');
+        $this->set('projects',$q);
+    }
+    
     public function media($slug,$year='')
     {
         $this->set('year',$year);

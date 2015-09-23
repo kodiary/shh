@@ -26,6 +26,8 @@
  */
 	Router::connect('/', array('controller' => 'pages', 'action' => 'index'));
     Router::connect('/view/*', array('controller' => 'pages', 'action' => 'detail'));
+    Router::connect('/event', array('controller' => 'pages', 'action' => 'allUpdates'));
+    Router::connect('/project', array('controller' => 'pages', 'action' => 'allProjects'));
     Router::connect('/contact', array('controller' => 'pages', 'action' => 'contact'));
     Router::connect('/media/*', array('controller' => 'pages', 'action' => 'media'));
     Router::connect('/gallery/*', array('controller' => 'pages', 'action' => 'gallery'));
