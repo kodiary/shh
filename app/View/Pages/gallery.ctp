@@ -12,7 +12,7 @@ foreach($image as $img)
                 <div class="mix-inner">
                     <img alt="" src="<?php echo $this->webroot;?>doc/<?php echo $img['Image']['file'];?>" />
                     <div class="mix-details">
-                        <h4>Food distribution</h4>
+                        <h4></h4>
                         <a class="mix-link">
                             <i class="fa fa-link"></i>
                         </a>
