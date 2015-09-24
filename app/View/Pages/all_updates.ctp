@@ -2,7 +2,7 @@
 <div class="container">
 <div class="row service-box margin-bottom-40">
 
-<h2>Latest Events</h2>
+<h2>All Events</h2>
         <p>&nbsp;</p>
         <div class="content-page">
 <div class="row">

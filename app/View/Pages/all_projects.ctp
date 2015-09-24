@@ -1,16 +1,52 @@
-<h1 class="title"><span>All Projects></span></h1>
+<div class="main clearfix">
+<div class="container">
+<div class="row service-box margin-bottom-40">
+
+<h2>All Projects</h2>
+        <p>&nbsp;</p>
+        <div class="content-page">
+<div class="row">
 <div class="description">
         <?php
-        foreach($projects as $pro)
+        foreach($projects as $up)
         {
             ?>
-            <div class="updates" style="border-bottom: 1px dotted green;padding:15px 0;">
-                <h2 style="font-size: 16px;font-weight: bold;color:#999;padding-bottom:5px;"><?php echo $pro['Project']['title'];?></h2>
-                <div class="img left" style="border: 2px solid #e5e5e5;border-radius:5px;"><img src="<?php echo $this->webroot;?>doc/<?php echo $pro['Project']['image'];?>" width="100px" /></div>
-                <div class="texts left margin_left10" style="width: 550px;"><?php echo substr($pro['Project']['description'],0,150).'...' ?></div>
-                <div class="clear"></div>
-                <a href="<?php echo $this->webroot;?>pages/projects/<?php echo $pro['Project']['slug'];?>" class="viewmore" style="display: block;float:right;padding:5px 10px;text-decoration: none;color:#FFF;background:green;border-radius:4px;">View More</a>
-                <div class="clear"></div>
+            <div class="events">
+               
+                
+                <div class="col-md-2 col-sm-4" style="padding-top: 7px;">
+                    <div class="">
+                        <div class="item">
+                            <img style="max-width: 100%;" src="<?php echo $this->webroot;?>doc/<?php echo $up['Project']['image'];?>" />
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-10 col-sm-8">
+                    <h2 style="padding-top: 0;">
+                        <a href="<?php echo $this->webroot;?>pages/updates/<?php echo $up['Project']['slug'];?>"><?php echo $up['Project']['title'];?></a>
+                    </h2>
+                    <ul class="blog-info" style="margin: 0 0 12px;">
+                        <li>
+                            <i class="fa fa-calendar"></i>
+                            <?php echo $up['Project']['added_on'];?>
+                        </li>
+                    </ul>
+                    <p>
+                        <em>
+                            <strong>
+                                <?php echo substr(strip_tags($up['Project']['description']),0,150).'...' ?>
+                            
+                            </strong>
+                        </em>
+                    </p>
+                </div>
+                <div class="clearfix"></div>
+                
+                
+                
+                
             </div>
             <?php
         }
@@ -28,3 +64,7 @@
         </ul>
     </div>        
 </div>
+   </div>        
+</div>   </div>  
+</div>   </div>       
+
