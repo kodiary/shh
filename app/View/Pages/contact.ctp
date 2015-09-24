@@ -63,7 +63,7 @@
         							<div class="space20">
         							</div>
         							<!-- BEGIN FORM-->
-        							<form action="#">
+        							<form action="<?php echo $this->webroot; ?>Pages/email" method="post">
         								<h3 class="form-section">Feedback</h3>
         								<p>
         									 Lorem ipsum dolor sit amet, Ut wisi enim ad minim veniam, quis nostrud exerci. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat consectetuer
@@ -71,23 +71,23 @@
         								<div class="form-group">
         									<div class="input-icon">
         										<i class="fa fa-check"></i>
-        										<input type="text" class="form-control" placeholder="Subject">
+        										<input type="text" class="form-control" placeholder="Subject" name="subject" />
         									</div>
         								</div>
         								<div class="form-group">
         									<div class="input-icon">
         										<i class="fa fa-user"></i>
-        										<input type="text" class="form-control" placeholder="Name">
+        										<input type="text" class="form-control" placeholder="Name" name="name" />
         									</div>
         								</div>
         								<div class="form-group">
         									<div class="input-icon">
         										<i class="fa fa-envelope"></i>
-        										<input type="password" class="form-control" placeholder="Email">
+        										<input type="text" class="form-control" placeholder="Email" name="email" />
         									</div>
         								</div>
         								<div class="form-group">
-        									<textarea class="form-control" rows="3=6" placeholder="Feedback"></textarea>
+        									<textarea class="form-control" rows="3=6" placeholder="Feedback" name="message"></textarea>
         								</div>
         								<button type="submit" class="btn green">Submit</button>
         							</form>
