@@ -1,10 +1,13 @@
-<h1 class="title"><span>Updates ><?php echo $pages['Update']['title'];?></span></h1>
-<div style="padding: 10px 0;border-bottom:1px dotted green">
-<div><img src="<?php echo $this->webroot;?>doc/<?php echo $pages['Update']['image'];?>" width="350" style="border:5px solid #f5f5f5;border-radius: 10px;" /></div>
-</div>
+<div class="main clearfix">
+<div class="container">
+<div class="row service-box margin-bottom-40">
+<h1 class="title">Updates <small><?php echo $pages['Update']['title'];?></small></h1>
 
-<div class="description">
-<div class="small" style="font-size: 13px;">
+<div class="col-md-6"><img src="<?php echo $this->webroot;?>doc/<?php echo $pages['Update']['image'];?>" /></div>
+
+
+<div class="col-md-6">
+
 <?php
 if($act)
 {
@@ -12,7 +15,12 @@ if($act)
     echo "<br/>";
 }
 ?>
+<ul class="blog-info" style="margin: 0 0 12px;">
+<li>
+<i class="fa fa-calendar"></i>
+<?php echo $pages['Update']['added_on'];?>
+</li>
+</ul>
 
-<span style="color: green;"><?php echo $pages['Update']['added_on'];?></span><br /><br />
-</div>
 <?php echo $pages['Update']['description'];?></div>
+</div></div></div>
