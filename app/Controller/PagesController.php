@@ -19,6 +19,7 @@
  */
 
 App::uses('AppController', 'Controller');
+App::uses('CakeEmail', 'Network/Email');
 
 /**
  * Static content controller
@@ -71,16 +72,20 @@ function player($id)
     $this->set('media',$q);
 }
 function contact()
-{
+{   
     if(isset($_POST) && $_POST)
     {
         $name = $_POST['name'];
         $email = $_POST['email'];
+        echo $name;
+        echo $email;
+        echo $_POST['message'];
         //$message = $_POST['message'];
+        App::uses('CakeEmail', 'Network/Email');
         $emails = new CakeEmail();
                 $emails->from(array('noreply@islamisanghnepal.org'=>'Islami Sangh Nepal'));
-            
-                $emails->emailFormat('html');
+                $emails->to('newera_cyber@hotmail.com');
+                //$emails->emailFormat('html');
                 
                 $emails->subject('New contact Message');
                 
@@ -92,10 +97,10 @@ function contact()
 <b>From</b> : ".$name."<br/>
 <b>Email</b> : ".$email."<br/>
 <b>Message</b> : ".$_POST['message'];
-                $emails->to('journo.abbas@gmail.com');
+                
                 $emails->send($message);
                 $this->Session->setFlash('Message sent successfully');
-                $this->redirect('contact');
+               // $this->redirect('contact');
     }
     
 }
@@ -199,5 +204,19 @@ function contact()
         return $recent = $this->Media->find('all',array('order'=>'id DESC','limit'=>3));
     }
     
+    function email()
+    {
+    
+        
+        $Email = new CakeEmail();
+        $Email->from(array('noreply@kodiary.com' => 'Kodiary'));
+        $Email->to('newera_cyber@hotmail.com');
+        $Email->subject('Welcome to Kodiary');
+        $Email->send('Hi, welcome to Kodiary');
+        die();
+    
+        
+    }
    
 }
+
