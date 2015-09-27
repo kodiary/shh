@@ -72,24 +72,20 @@ function player($id)
     $this->set('media',$q);
 }
 function contact()
-{   
-    if(isset($_POST) && $_POST)
+{  
+     $this->loadModel('Admin');
+        $a=$this->Admin->find('first');
+        if(isset($_POST) && $_POST)
     {
         $name = $_POST['name'];
         $email = $_POST['email'];
-        echo $name;
-        echo $email;
-        echo $_POST['message'];
+        $admin =$a['Admin']['email'];
         //$message = $_POST['message'];
-        App::uses('CakeEmail', 'Network/Email');
         $emails = new CakeEmail();
                 $emails->from(array('noreply@islamisanghnepal.org'=>'Islami Sangh Nepal'));
-                $emails->to('newera_cyber@hotmail.com');
-                //$emails->emailFormat('html');
-                
+                $emails->to($admin);
+                $emails->emailFormat('html');
                 $emails->subject('New contact Message');
-                
-                
                 $message="
                 Assalam Alaikum,<br/><br/>
                 You have received a new message from islamisanghnepal.org<br/><br/> 
@@ -97,10 +93,9 @@ function contact()
 <b>From</b> : ".$name."<br/>
 <b>Email</b> : ".$email."<br/>
 <b>Message</b> : ".$_POST['message'];
-                
                 $emails->send($message);
                 $this->Session->setFlash('Message sent successfully');
-               // $this->redirect('contact');
+                $this->redirect('contact');
     }
     
 }

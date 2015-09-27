@@ -63,7 +63,7 @@
         							<div class="space20">
         							</div>
         							<!-- BEGIN FORM-->
-        							<form action="<?php echo $this->webroot; ?>Pages/email" method="post">
+        							<form action="<?php echo $this->webroot; ?>Pages/contact" method="post">
         								<h3 class="form-section">Feedback</h3>
         								<p>
         									 Lorem ipsum dolor sit amet, Ut wisi enim ad minim veniam, quis nostrud exerci. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat consectetuer

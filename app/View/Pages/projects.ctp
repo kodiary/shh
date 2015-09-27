@@ -15,12 +15,7 @@ if($act)
     echo "<br/>";
 }
 ?>
-<ul class="blog-info" style="margin: 0 0 12px;">
-<li>
-<i class="fa fa-calendar"></i>
-<?php echo $pages['Project']['added_on'];?>
-</li>
-</ul>
+
 
 </div>
 <?php echo $pages['Project']['description'];?></div>
