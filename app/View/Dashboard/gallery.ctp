@@ -4,7 +4,7 @@
 <a class="btn btn-success addcat" href="javascript:void(0)">Add Gallery Category</a>
     <div class="category-add" style="display:none;">
     <form id="myform" method="post" action="/shh/dashboard/addCategory" novalidate="novalidate">
-<input class="required valid" type="text"  name="category-name" placeholder="Enter Category Name" />
+<input class="required valid" type="text"  name="category-name" placeholder="Enter Category Name" required=""/>
 <input type="submit" class="btn btn-primary" value="Add Category"/>
 </form>
 </div>
@@ -17,16 +17,19 @@ $i=0;
 foreach($val as $v){
     $i++;
     $id=$v['Gallerycats']['id'];
+    $parent=$v['Gallerycats']['parent_id'];
     $sub = $this->requestAction('/dashboard/getSub/'.$id);
  ?>
-<div class="list"><div class="number"><?php echo $i;?>.</div><div class="title"><?php echo $v['Gallerycats']['title']?></div><div class="action"><a href="javascript:void(0)" class="btn btn-success add<?php echo $i;?>">Add</a><a href="javascript:void(0)" class="btn btn-danger">Delete</a></div><div class="clear"></div>
-<div class="category-sub" style="display:none;">
-    <form id="myform" method="post" action="/shh/dashboard/addCategorySub" novalidate="novalidate">
-<input class="required valid" type="text"  name="category-sub" placeholder="Enter Category-sub" />
+<div class="list"><div class="number"><?php echo $i;?>.</div><div class="title"><?php echo $v['Gallerycats']['title']?></div>
+<div class="action" ><a href="javascript:void(0)" onclick=' $(this).find(".category-sub").show();' class="btn btn-success add<?php echo $i;?>">Add</a><a href="<?php echo $this->webroot;?>dashboard/deletecat/<?php echo $id;?>" onclick="return confirm('Are you sure you want to delete this item?');" class="btn btn-danger">Delete</a>
+</div><div class="clear"></div>
+<div class="category-sub" style="display:;">
+    <form id="myform" method="post" action="/shh/dashboard/addCategorySub/<?php echo $id;?>" novalidate="novalidate">
+<input class="required valid" type="text"  name="category-sub" placeholder="Enter Category-sub" required=""/>
 <input type="submit" class="btn btn-primary" value="Add Sub-Category"/>
 </form>
 </div>
-
+ 
 <ul style="list-style-type:none;">
 <?php
 $j=0;
@@ -37,11 +40,14 @@ $j++;
  $image=$this->requestAction('/dashboard/getImg/'.$sub_id);
 
 ?><li>
-<div class="list"><div class="number"><?php echo $j;?>.</div><div class="title"><?php echo $s['Gallerycats']['title']?></div><div class="action"><a href="javascript:void(0)" class="btn btn-success add<?php echo $j;?>">Add</a><a href="javascript:void(0)" class="btn btn-danger">Delete</a></div><div class="clear"></div></div>
- <div class="category-sub" style="display:none;">
-    <form id="myform" method="post" action="/shh/dashboard/addCategorySub" novalidate="novalidate">
-<input class="required valid" type="text"  name="category-sub" placeholder="Enter Category-sub" />
-<input type="submit" class="btn btn-primary" value="Add Sub-Category"/>
+<div class="list"><div class="number"><?php echo $j;?>.</div>
+<div class="title"><?php echo $s['Gallerycats']['title']?></div>
+<div class="action"><a href="javascript:void(0)" class="btn btn-success add<?php echo $j;?>">Add</a><a href="<?php echo $this->webroot;?>dashboard/deletesubcategory/<?php echo  $sub_id;?>" onclick="return confirm('Are you sure you want to delete this item?');" class="btn btn-danger">Delete</a></div><div class="clear"></div></div>
+ <div class="category-sub" style="display:;">
+<form id="myform" method="post" action="/shh/dashboard/addCategoryImg/<?php echo $sub_id;?>" novalidate="novalidate" enctype="multipart/form-data">
+<input class="required valid" type="text"  name="category-img-title" placeholder="Enter image title" required=""/><br/>
+<input class="required valid" type="file"  name="image" required="" />
+<input type="submit" class="btn btn-primary" value="Add Category-Img"/>
 </form>
 </div>
 
@@ -52,10 +58,18 @@ $j++;
     foreach($image as $img)
 { 
 $k++;
+$iid=$img['Galleryimgs']['id'];
 
 ?>
 <li>
-<div class="list"><div class="number"><?php echo $k;?>.</div><div class="title"><?php echo $img['Galleryimgs']['title']?></div><div class="action"><a href="javascript:void(0)" class="btn btn-danger">Delete</a></div><div class="clear"></div></div>
+<div class="list"><div class="number"><?php echo $k;?>.</div>
+<div class="title"><?php echo $img['Galleryimgs']['title']?></div>
+<div><img src="<?php echo $this->webroot.'galleryimgs/'.$img['Galleryimgs']['img']?>" height="50px" width="50px" /></div>
+<div class="action">
+<a href="<?php echo $this->webroot;?>dashboard/deleteImage/<?php echo $iid;?>" onclick="return confirm('Are you sure you want to delete this item?');"class="btn btn-danger">Delete</a>
+</div>
+<div class="clear"></div>
+</div>
 </li>
 
 

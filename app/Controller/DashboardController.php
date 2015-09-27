@@ -601,5 +601,102 @@ class DashboardController extends AppController
             
             return $sub;
         }
+        
+        function addCategorySub($id){
+           
+             if(isset($_POST) && $_POST)
+            {
+                
+            $this->loadModel('Gallerycats');
+            $arr['title']=$_POST['category-sub'];
+            $arr['parent_id']=$id;
+            
+            $this->Gallerycats->create();
+            $this->Gallerycats->save($arr);
+            $this->redirect('/dashboard/gallery');
+            }
+        }
+        function addCategoryImg($id){
+           
+             if(isset($_POST) && $_POST)
+            {
+            $name = $_FILES['image']['name'];
+           
+            $arr = explode('.',$name);
+            $ext = end($arr);
+            $rand = rand(10000000,99999999).'_'.rand(10000,99999).'.'.$ext;
+            move_uploaded_file($_FILES['image']['tmp_name'],APP.'webroot/galleryimgs/'.$rand);
+            $this->loadModel('Galleryimgs');
+            $arr['img']=$rand;
+            $arr['title']=$_POST['category-img-title'];
+            $arr['cat_id']=$id;
+            
+            $this->Galleryimgs->create();
+            $this->Galleryimgs->save($arr);
+            $this->redirect('/dashboard/gallery');
+            }
+        }
+        function deleteImg($id){
+            
+             $this->loadModel('Galleryimg');
+             $arr['conditions'] = array('cat_id'=>$id);
+             $imgs = $this->Galleryimg->find('all',$arr);
+             foreach($imgs as $i)
+             {
+                $this->Galleryimg->delete($i['Galleryimg']['id']);
+                $path=APP.'webroot/galleryimgs/'.$i['Galleryimg']['img'];
+                             unlink($path);
+                
+             }
+             return true;
+        
+        }
+        function deleteImage($id)
+        {
+            $this->loadModel('Galleryimg');
+             
+            $this->Galleryimg->delete($id);
+            
+             
+             $this->redirect('/dashboard/gallery'); 
+        }
+        function deletesubcat($id){
+             $this->loadModel('Gallerycat');
+             $arr['conditions'] = array('parent_id'=>$id);
+             $sub = $this->Gallerycat->find('all',$arr);
+             foreach($sub as $s)
+             {
+                $this->Gallerycat->delete($s['Gallerycat']['id']);
+                $this->deleteImg($s['Gallerycat']['id']);
+             }
+             return true;
+        //$this->Gallerycats->delete($id);
+        //$this->redirect('/dashboard/gallery');
+       // $this->redirect('/dashboard/deletesubcatimg/'.$id);
+            
+        }
+        function deletesubcategory($id)
+        {
+            $this->loadModel('Gallerycat');
+             
+                $this->Gallerycat->delete($id);
+                $this->deleteImg($id);
+             
+             $this->redirect('/dashboard/gallery'); 
+        }
+        /*function fetchcatid($cid){
+             $this->loadModel('Galleryimg');
+             $arr['conditions']=array('cat_id'=>$cid);
+        $this->Gallerycats->find('all',$arr);
+        $this->redirect('/dashboard/gallery');
+        }*/
+        function deletecat($id){
+             $this->loadModel('Gallerycat');
+        $this->Gallerycat->delete($id);
+        $this->deletesubcat($id);
+        $this->redirect('/dashboard/gallery'); 
+            
+        }
+        
 }
 ?>
