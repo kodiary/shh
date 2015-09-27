@@ -559,5 +559,47 @@ class DashboardController extends AppController
             $this->Slider->delete($id);
             $this->redirect('slider');
         }
+        
+        function gallery(){
+             $this->loadModel('Gallerycats');
+             $arr['conditions']=array('Gallerycats.parent_id'=>0);
+             
+            $q= $this->Gallerycats->find('all',$arr);
+            
+            $this->set("val",$q);
+
+        }
+        function addCategory(){
+            $this->loadModel('Gallerycats');
+            $arr['title']=$_POST['category-name'];
+          // debug($arr);
+            $this->Gallerycats->create();
+            $this->Gallerycats->save($arr);
+            $this->redirect('/dashboard/gallery');
+            
+        }
+        function listCategory(){
+            
+        }
+        function getSub($id)
+        {
+            $this->loadModel('Gallerycats');
+             $arr['conditions']=array('Gallerycats.parent_id'=>$id);
+             
+            $q= $this->Gallerycats->find('all',$arr);
+            
+            return $q;
+        }
+        
+        function getImg($sub_id){
+
+            
+            $this->loadModel('Galleryimgs');
+             $arr['conditions']=array('Galleryimgs.cat_id'=>$sub_id);
+           
+            $sub= $this->Galleryimgs->find('all',$arr);
+            
+            return $sub;
+        }
 }
 ?>

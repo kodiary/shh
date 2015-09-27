@@ -27,6 +27,7 @@
             <li><a href="<?php echo $this->webroot;?>dashboard/settings">Settings</a></li>
             <li><a href="<?php echo $this->webroot;?>dashboard/updates">Updates</a></li>
             <li><a href="<?php echo $this->webroot;?>dashboard/projects">Projects</a></li>
+            <li><a href="<?php echo $this->webroot;?>dashboard/gallery">Gallery</a></li>
             <li><a href="<?php echo $this->webroot;?>dashboard/slider">Slider</a></li>
             <li><a href="<?php echo $this->webroot;?>dashboard/logout">Logout</a></li>
             
