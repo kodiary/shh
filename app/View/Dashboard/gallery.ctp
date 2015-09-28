@@ -48,8 +48,8 @@ $j++;
 ?><li>
 <div class="list"><div class="number"><?php echo $j;?>.</div>
 <div class="title"><?php echo $s['Gallerycats']['title']?></div>
-<div class="action"><a href="javascript:void(0)" class="btn btn-success addimg;?>">Add Category-Img</a><a href="<?php echo $this->webroot;?>dashboard/deletesubcategory/<?php echo  $sub_id;?>" onclick="return confirm('Are you sure you want to delete this item?');" class="btn btn-danger">Delete</a></div><div class="clear"></div>
- <div class="cat-img" style="display:;">
+<div class="action"><a href="javascript:void(0)" class="btn btn-success addimg">Add Category-Img</a><a href="<?php echo $this->webroot;?>dashboard/deletesubcategory/<?php echo  $sub_id;?>" onclick="return confirm('Are you sure you want to delete this item?');" class="btn btn-danger">Delete</a></div><div class="clear"></div>
+ <div class="cat-img" style="display:none;">
 <form id="myform" method="post" action="/shh/dashboard/addCategoryImg/<?php echo $sub_id;?>" novalidate="novalidate" enctype="multipart/form-data">
 <input class="required valid" type="text"  name="category-img-title" placeholder="Enter image title" required=""/><br/>
 <input class="required valid" type="file"  name="image" required="" />
