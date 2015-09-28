@@ -3,124 +3,32 @@
         <div class="row service-box margin-bottom-40">
         <h2>Portfolio</h2>
         <div class="row mix-grid thumbnails">
+        <?php  foreach ($category as $cat)
+                {
+                      $randimg = $this->requestAction('/Pages/getImg/'.$cat['Gallerycat']['id']);
+                    //$randimg = $this->requestAction('/pages/getImg/'.$cat['Gallerycat']['id']);
+                    ?>
             <div class="col-md-3 col-sm-4 mix category_1 mix_all" style="display: block; opacity: 1; ">
                 <div class="mix-inner">
-                <?php  foreach ($a as $actimg)
-                {
-                    ?><img class="img-responsive" src="<?php echo $this->webroot;?>assets/frontend/pages/img/works/img1." alt=""> <?php
+                
+                    <img class="img-responsive" src="<?php echo $this->webroot;?>galleryimgs/<?php echo $randimg; ?>" alt="">
+                     
+                    <div class="mix-details">
+                        <h4><?php echo $cat['Gallerycat']['title']; ?></h4>
+                        <a class="mix-link" href="<?php $this->webroot; ?>Pages/gallery">
+                            <i class="fa fa-link"></i>
+                        </a>
+                        <a class="mix-preview fancybox-button" href="<?php echo $this->webroot;?>galleryimgs/<?php echo $randimg; ?>" title="Project Name" data-rel="fancybox-button">
+                            <i class="fa fa-search"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <?php
                 }
                 
                 ?>
-                    <img class="img-responsive" src="<?php echo $this->webroot;?>assets/frontend/pages/img/works/img1.jpg" alt="">
-                    <div class="mix-details">
-                        <h4>Food distribution</h4>
-                        <a class="mix-link">
-                            <i class="fa fa-link"></i>
-                        </a>
-                        <a class="mix-preview fancybox-button" href="<?php echo $this->webroot;?>assets/frontend/pages/img/works/img1.jpg" title="Project Name" data-rel="fancybox-button">
-                            <i class="fa fa-search"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-4 mix category_1 mix_all" style="display: block; opacity: 1; ">
-                <div class="mix-inner">
-                    <img class="img-responsive" src="<?php echo $this->webroot;?>assets/frontend/pages/img/works/img2.jpg" alt="">
-                    <div class="mix-details">
-                        <h4>Book Distribution</h4>
-                        <a class="mix-link">
-                            <i class="fa fa-link"></i>
-                        </a>
-                        <a class="mix-preview fancybox-button" href="<?php echo $this->webroot;?>assets/frontend/pages/img/works/img1.jpg" title="Project Name" data-rel="fancybox-button">
-                            <i class="fa fa-search"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-4 mix category_1 mix_all" style="display: block; opacity: 1; ">
-                <div class="mix-inner">
-                    <img class="img-responsive" src="<?php echo $this->webroot;?>assets/frontend/pages/img/works/img3.jpg" alt="">
-                    <div class="mix-details">
-                        <h4>Computer classes</h4>
-                        <a class="mix-link">
-                            <i class="fa fa-link"></i>
-                        </a>
-                        <a class="mix-preview fancybox-button" href="<?php echo $this->webroot;?>assets/frontend/pages/img/works/img1.jpg" title="Project Name" data-rel="fancybox-button">
-                            <i class="fa fa-search"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-4 mix category_1 mix_all" style="display: block; opacity: 1; ">
-                <div class="mix-inner">
-                    <img class="img-responsive" src="<?php echo $this->webroot;?>assets/frontend/pages/img/works/img4.jpg" alt="">
-                    <div class="mix-details">
-                        <h4>Scholarship for poor</h4>
-                        <a class="mix-link">
-                            <i class="fa fa-link"></i>
-                        </a>
-                        <a class="mix-preview fancybox-button" href="<?php echo $this->webroot;?>assets/frontend/pages/img/works/img1.jpg" title="Project Name" data-rel="fancybox-button">
-                            <i class="fa fa-search"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-4 mix category_1 mix_all" style="display: block; opacity: 1; ">
-                <div class="mix-inner">
-                    <img class="img-responsive" src="<?php echo $this->webroot;?>assets/frontend/pages/img/works/img4.jpg" alt="">
-                    <div class="mix-details">
-                        <h4>Scholarship for poor</h4>
-                        <a class="mix-link">
-                            <i class="fa fa-link"></i>
-                        </a>
-                        <a class="mix-preview fancybox-button" href="<?php echo $this->webroot;?>assets/frontend/pages/img/works/img1.jpg" title="Project Name" data-rel="fancybox-button">
-                            <i class="fa fa-search"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-4 mix category_1 mix_all" style="display: block; opacity: 1; ">
-                <div class="mix-inner">
-                    <img class="img-responsive" src="<?php echo $this->webroot;?>assets/frontend/pages/img/works/img3.jpg" alt="">
-                    <div class="mix-details">
-                        <h4>Computer classes</h4>
-                        <a class="mix-link">
-                            <i class="fa fa-link"></i>
-                        </a>
-                        <a class="mix-preview fancybox-button" href="<?php echo $this->webroot;?>assets/frontend/pages/img/works/img1.jpg" title="Project Name" data-rel="fancybox-button">
-                            <i class="fa fa-search"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-4 mix category_1 mix_all" style="display: block; opacity: 1; ">
-                <div class="mix-inner">
-                    <img class="img-responsive" src="<?php echo $this->webroot;?>assets/frontend/pages/img/works/img1.jpg" alt="">
-                    <div class="mix-details">
-                        <h4>Cascusamus et iusto odio</h4>
-                        <a class="mix-link">
-                            <i class="fa fa-link"></i>
-                        </a>
-                        <a class="mix-preview fancybox-button" href="<?php echo $this->webroot;?>assets/frontend/pages/img/works/img1.jpg" title="Project Name" data-rel="fancybox-button">
-                            <i class="fa fa-search"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-4 mix category_1 mix_all" style="display: block; opacity: 1; ">
-                <div class="mix-inner">
-                    <img class="img-responsive" src="<?php echo $this->webroot;?>assets/frontend/pages/img/works/img3.jpg" alt="">
-                    <div class="mix-details">
-                        <h4>Computer classes</h4>
-                        <a class="mix-link">
-                            <i class="fa fa-link"></i>
-                        </a>
-                        <a class="mix-preview fancybox-button" href="<?php echo $this->webroot;?>assets/frontend/pages/img/works/img1.jpg" title="Project Name" data-rel="fancybox-button">
-                            <i class="fa fa-search"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            
         </div>
         
         <p>&nbsp;</p>

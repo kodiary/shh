@@ -40,10 +40,9 @@ function index()
     $this->loadModel('Update');
     $this->loadModel('Project');
     $this->loadModel('Slider');
-    $this->loadModel('Gallerycart');
+    $this->loadModel('Gallerycat');
     $this->loadModel('Galleryimg');
-    $actimg = $this->Galleryimg->find('all',array('order'=>'rand()','limit'=>9));
-    
+    $cat= $this->Gallerycat->find('all',array('conditions'=>array('parent_id'=>'0'),'limit'=>8));
     
     
     $a = $this->Page->find('first',array('conditions'=>array('id'=>2)));
@@ -63,12 +62,22 @@ function index()
     $this->set('achild',$ac);
     $this->set('act',$act);
     $this->set('actc',$actc);
-    $this->set('actimg',$actimg);
+    $this->set('category',$cat);
     $this->set('depart',$d);
     $this->set('child',$dc);
     $this->set('updates',$this->Update->find('all',array('limit'=>5,'order'=>'id DESC')));
     $this->set('projects',$this->Project->find('all',array('limit'=>5,'order'=>'id DESC')));
     $this->set('slider',$this->Slider->find('all',array('limit'=>10,'order'=>'id DESC')));
+}
+function getImg($id)
+{
+    $this->loadModel('Galleryimg');
+    //$q = $this->Galleryimg->find('first',array('conditions'=>array('cat_id IN (SELECT id FROM gallerycats where parent_id = "'.$id.'")')));
+      $q=  $this->Galleryimg->find('first',array('conditions'=>array('cat_id IN (SELECT id FROM gallerycats where parent_id = "'.$id.'")')));
+    if ($q && $q['Galleryimg']['img'])
+    return $q['Galleryimg']['img'];
+    else
+    return 'noimage.png';
 }
 function player($id)
 {
@@ -171,7 +180,10 @@ function contact()
         $this->set('slug',$slug);
     }
     public function gallery($year='')
-    {
+    {   
+        $this->loadModel('Gallerycat');
+        $cat= $this->Gallerycat->find('all',array('conditions'=>array('parent_id'=>'0')));
+        $this->set('category',$cat);
         $this->set('year',$year);
         if($year){
         $date1 = $year.'-01-01';
@@ -205,19 +217,28 @@ function contact()
         return $recent = $this->Media->find('all',array('order'=>'id DESC','limit'=>3));
     }
     
-    function email()
-    {
-    
+
+    function catDetail($id)
+    {   
         
-        $Email = new CakeEmail();
-        $Email->from(array('noreply@kodiary.com' => 'Kodiary'));
-        $Email->to('newera_cyber@hotmail.com');
-        $Email->subject('Welcome to Kodiary');
-        $Email->send('Hi, welcome to Kodiary');
-        die();
-    
-        
+       $this->loadModel('Gallerycat');
+       $cat= $this->Gallerycat->find('all',array('conditions'=>array('parent_id'=>$id)));
+       $this->set('category',$cat);
     }
+    function getImage($id)
+{
+    $this->loadModel('Galleryimg');
+    $q=  $this->Galleryimg->find('all',array('conditions'=>array('cat_id IN (SELECT id FROM gallerycats where id = "'.$id.'")')));
+    
+    if($q)
+    return $q;
+    else
+    return 'noimage.png';
+
+    
+   
+}
+    
    
 }
 
