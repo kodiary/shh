@@ -48,13 +48,14 @@ $j++;
 ?><li>
 <div class="list"><div class="number"><?php echo $j;?>.</div>
 <div class="title"><?php echo $s['Gallerycats']['title']?></div>
-<div class="action"><a href="javascript:void(0)" class="btn btn-success addimg;?>">Add</a><a href="<?php echo $this->webroot;?>dashboard/deletesubcategory/<?php echo  $sub_id;?>" onclick="return confirm('Are you sure you want to delete this item?');" class="btn btn-danger">Delete</a></div><div class="clear"></div></div>
+<div class="action"><a href="javascript:void(0)" class="btn btn-success addimg;?>">Add Category-Img</a><a href="<?php echo $this->webroot;?>dashboard/deletesubcategory/<?php echo  $sub_id;?>" onclick="return confirm('Are you sure you want to delete this item?');" class="btn btn-danger">Delete</a></div><div class="clear"></div>
  <div class="cat-img" style="display:;">
 <form id="myform" method="post" action="/shh/dashboard/addCategoryImg/<?php echo $sub_id;?>" novalidate="novalidate" enctype="multipart/form-data">
 <input class="required valid" type="text"  name="category-img-title" placeholder="Enter image title" required=""/><br/>
 <input class="required valid" type="file"  name="image" required="" />
-<input type="submit" class="btn btn-primary" value="Add Category-Img"/>
+<input type="submit" class="btn btn-primary" value="save"/>
 </form>
+</div>
 </div>
 
 <ul style="list-style-type:none;">
@@ -68,7 +69,7 @@ $iid=$img['Galleryimgs']['id'];
 
 ?>
 <li>
-<div class="list"><div class="number"><?php echo $k;?>.</div>
+<div class="list1"><div class="number"><?php echo $k;?>.</div>
 <div class="title"><?php echo $img['Galleryimgs']['title']?></div>
 <div><img src="<?php echo $this->webroot.'galleryimgs/'.$img['Galleryimgs']['img']?>" height="50px" width="50px" /></div>
 <div class="action">
@@ -109,9 +110,9 @@ $(function(){
     });
     $(document.body).on('click','.add',function(){
         $(this).parent().parent().find('.cat-sub').toggle("slow");
-     })
+     });
      $(document.body).on('click','.addimg',function(){
-              $('.cat-img').toggle("slow");
-     })
+              $(this).parent().parent().find('.cat-img').toggle("slow");
+     });
 });
 </script>
