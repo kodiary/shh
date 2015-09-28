@@ -645,7 +645,7 @@ class DashboardController extends AppController
              {
                 $this->Galleryimg->delete($i['Galleryimg']['id']);
                 $path=APP.'webroot/galleryimgs/'.$i['Galleryimg']['img'];
-                             unlink($path);
+                unlink($path);
                 
              }
              return true;
@@ -654,10 +654,13 @@ class DashboardController extends AppController
         function deleteImage($id)
         {
             $this->loadModel('Galleryimg');
+             $sub = $this->Galleryimg->find('first');
              
-            $this->Galleryimg->delete($id);
+            $path=APP.'webroot/galleryimgs/'.$sub['Galleryimg']['img'];
             
-             
+            
+            $this->Galleryimg->delete($id);
+            unlink($path); 
              $this->redirect('/dashboard/gallery'); 
         }
         function deletesubcat($id){

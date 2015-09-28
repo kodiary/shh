@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.14
+-- version 4.2.7.1
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 22, 2015 at 09:03 AM
--- Server version: 5.6.17
--- PHP Version: 5.5.12
+-- Generation Time: Sep 28, 2015 at 07:37 AM
+-- Server version: 5.6.20
+-- PHP Version: 5.5.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -27,11 +27,10 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `admins` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
+  `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
@@ -44,15 +43,59 @@ INSERT INTO `admins` (`id`, `username`, `email`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `gallerycats`
+--
+
+CREATE TABLE IF NOT EXISTS `gallerycats` (
+`id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `parent_id` int(11) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
+
+--
+-- Dumping data for table `gallerycats`
+--
+
+INSERT INTO `gallerycats` (`id`, `title`, `parent_id`) VALUES
+(18, 'at kathmandu', 17),
+(16, 'bad food', 13),
+(12, 'Cake ', 7),
+(17, 'clothes distribution', 0),
+(13, 'food addiction', 0),
+(14, 'good food', 13);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `galleryimgs`
+--
+
+CREATE TABLE IF NOT EXISTS `galleryimgs` (
+`id` int(11) NOT NULL,
+  `title` varchar(100) NOT NULL,
+  `img` varchar(650) NOT NULL,
+  `cat_id` int(11) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `galleryimgs`
+--
+
+INSERT INTO `galleryimgs` (`id`, `title`, `img`, `cat_id`) VALUES
+(2, 'ktmimg', '59287414_37328.jpg', 18),
+(3, 'me', '78024597_23743.jpg', 18);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `images`
 --
 
 CREATE TABLE IF NOT EXISTS `images` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `file` varchar(255) NOT NULL,
-  `added_on` date NOT NULL,
-  PRIMARY KEY (`id`)
+  `added_on` date NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
 
 --
@@ -77,10 +120,9 @@ INSERT INTO `images` (`id`, `title`, `file`, `added_on`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `links` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
-  `links` text NOT NULL,
-  PRIMARY KEY (`id`)
+  `links` text NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
@@ -104,14 +146,13 @@ INSERT INTO `links` (`id`, `title`, `links`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `media` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `media_type` varchar(255) CHARACTER SET latin1 NOT NULL,
   `title` varchar(255) CHARACTER SET latin1 NOT NULL,
   `description` text CHARACTER SET latin1 NOT NULL,
   `file` varchar(255) CHARACTER SET latin1 NOT NULL,
   `youtube` text CHARACTER SET latin1 NOT NULL,
-  `added_on` date NOT NULL,
-  PRIMARY KEY (`id`)
+  `added_on` date NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
 
 --
@@ -138,12 +179,11 @@ INSERT INTO `media` (`id`, `media_type`, `title`, `description`, `file`, `youtub
 --
 
 CREATE TABLE IF NOT EXISTS `pages` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `description` text NOT NULL,
   `parent` int(11) NOT NULL,
-  `slug` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
+  `slug` varchar(255) NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
@@ -156,14 +196,40 @@ INSERT INTO `pages` (`id`, `title`, `description`, `parent`, `slug`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `projects`
+--
+
+CREATE TABLE IF NOT EXISTS `projects` (
+  `id` int(11) NOT NULL DEFAULT '0',
+  `act_id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `slug` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `added_on` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `projects`
+--
+
+INSERT INTO `projects` (`id`, `act_id`, `title`, `slug`, `description`, `image`, `added_on`) VALUES
+(10, 28, 'Islamic sangh Nepal at Bhrikuti Mandap (International book fare)', 'Islamic_sangh_Nepal_at_Bhrikuti_Mandap__International_book_fare_', '<p>Subhan Allah! By Allah&#39;s grace we could see the thirst of people here in Kathmandu (International Book fare) to know Islam. We were pleased to see the huge gathering of people in our stall to get a copy of Qur&#39;an. Alhamdulillah.</p><p>It is therefore, we would like to remind Muslim brothers and sisters, that we are not doing our duty of reaching out to our non-muslims brothers and sisters. And most of our visitors commented us that it&#39;s a matter of great joy to see the Islamic books in Nepali, which shows their interest in knowing and understanding Islam.</p><p>We need to wake up, and reach out to the world with the message of Islam. Insha Allah!</p>', '646351_238162.jpg', '2014-05-30'),
+(11, 23, 'Great Indian Da''ee Abdullah Tariq addessing Students at Islami Sangh Nepal', 'Great_Indian_Da_ee_Abdullah_Tariq_addessing_Students_at_Islami_Sangh_Nepal', '<p>Er. Abdullah Tariq has visited Nepal today to support and train the Muslims of Nepal in the Da&#39;waa. He will have varity of trainings and speeches in Kathmandu at various locations. He will be addressing students every evening (starting from today) at 7:30 PM in the training hall of Islami Sangh Nepal. He will further join us in the Book fare (Bhrikuti Mandap) tomorrow at 11:00 and guide us with his experience. He will also deliver a speech at Bhrikuti Mandap stage a day after tomorrow following with various of other programs.</p><p>We request all of our viewers to take full advatage of these events. An opportunity like this will not come time and again.</p><p>May Allah guide Mr. Abdullah Tariq and give him best rewards for his hard works.</p>', '967166_269928.jpg', '2014-05-31'),
+(12, 22, 'Er. Abdullah Tariq at Bhrikuti Mandap (International Book Fare)', 'Er__Abdullah_Tariq_at_Bhrikuti_Mandap__International_Book_Fare_', '<p>Respected Er. Abdullah Tariq, visisted the book stall of Islami Sangh Nepal at Bhrikuti Mandap today. He spent hours of his precious time with us participating in Da&#39;waa to non Muslims and training to the members of the stall. We that him for his participation and for his guidelines for the members of the book stall.</p><p>We further would like to invite all of our viewers to participate in his speech starting from 4:00 PM tomorrow at Bhrikuti Mandap stage. The program is open for all people of any faith. This program will be followed by his training program at Islami Sangh Nepal at 7:30 PM.<br />&nbsp;</p>', '996095_225341.jpg', '2014-06-01'),
+(13, 23, 'Er. Abdullah Tariq, Public lecture at Bhrikuti Mandap', 'Sample_title_5_goes_here', '<p><em>Respected Er. Abdullah Tariq, delivered a speech on the topic, &quot;Islam For All&quot; at Bhrikuti Mandap program hall today. The program was an open participation program, where more that 100 people participated. People were shocked to hear him so sound in Vedas and other Hindu scriptures. We could hear the comments from people like, &quot;This is how a program should be like!&quot;.</em></p><p><em>The program was followed by an open question and answer session where some of the visitors participated in it. As a whole the program was successful and fruitfull as well.</em></p>', '345765_347250.jpg', '2014-05-28'),
+(14, 23, 'Concluded Four Days PPM at Kathmandu', 'Concluded_Four_Days_PPM_at_Kathmandy', '<p><em><strong>Four days Project, Planning and Management Program was organized at Bagbazar,Kathmandu on 14th-17th February for NGO officers and Students by Human Development Academy (HuDA) Nepal in the sponsorship of WAMY Nepal.</strong></em></p><p>&nbsp;</p>', '102951_373958.jpg', '2015-03-03');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `sliders`
 --
 
 CREATE TABLE IF NOT EXISTS `sliders` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `image` varchar(255) NOT NULL,
-  `caption` text NOT NULL,
-  PRIMARY KEY (`id`)
+  `caption` text NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
@@ -183,14 +249,13 @@ INSERT INTO `sliders` (`id`, `image`, `caption`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `updates` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `act_id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `slug` varchar(255) NOT NULL,
   `description` text NOT NULL,
   `image` varchar(255) NOT NULL,
-  `added_on` date NOT NULL,
-  PRIMARY KEY (`id`)
+  `added_on` date NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
 
 --
@@ -204,6 +269,113 @@ INSERT INTO `updates` (`id`, `act_id`, `title`, `slug`, `description`, `image`, 
 (13, 23, 'Er. Abdullah Tariq, Public lecture at Bhrikuti Mandap', 'Sample_title_5_goes_here', '<p><em>Respected Er. Abdullah Tariq, delivered a speech on the topic, &quot;Islam For All&quot; at Bhrikuti Mandap program hall today. The program was an open participation program, where more that 100 people participated. People were shocked to hear him so sound in Vedas and other Hindu scriptures. We could hear the comments from people like, &quot;This is how a program should be like!&quot;.</em></p><p><em>The program was followed by an open question and answer session where some of the visitors participated in it. As a whole the program was successful and fruitfull as well.</em></p>', '345765_347250.jpg', '2014-05-28'),
 (14, 23, 'Concluded Four Days PPM at Kathmandu', 'Concluded_Four_Days_PPM_at_Kathmandy', '<p><em><strong>Four days Project, Planning and Management Program was organized at Bagbazar,Kathmandu on 14th-17th February for NGO officers and Students by Human Development Academy (HuDA) Nepal in the sponsorship of WAMY Nepal.</strong></em></p><p>&nbsp;</p>', '102951_373958.jpg', '2015-03-03');
 
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `admins`
+--
+ALTER TABLE `admins`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `gallerycats`
+--
+ALTER TABLE `gallerycats`
+ ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `category` (`title`,`parent_id`);
+
+--
+-- Indexes for table `galleryimgs`
+--
+ALTER TABLE `galleryimgs`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `images`
+--
+ALTER TABLE `images`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `links`
+--
+ALTER TABLE `links`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `media`
+--
+ALTER TABLE `media`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `pages`
+--
+ALTER TABLE `pages`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `sliders`
+--
+ALTER TABLE `sliders`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `updates`
+--
+ALTER TABLE `updates`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `admins`
+--
+ALTER TABLE `admins`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `gallerycats`
+--
+ALTER TABLE `gallerycats`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=19;
+--
+-- AUTO_INCREMENT for table `galleryimgs`
+--
+ALTER TABLE `galleryimgs`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `images`
+--
+ALTER TABLE `images`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
+--
+-- AUTO_INCREMENT for table `links`
+--
+ALTER TABLE `links`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT for table `media`
+--
+ALTER TABLE `media`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=27;
+--
+-- AUTO_INCREMENT for table `pages`
+--
+ALTER TABLE `pages`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `sliders`
+--
+ALTER TABLE `sliders`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
+--
+-- AUTO_INCREMENT for table `updates`
+--
+ALTER TABLE `updates`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
