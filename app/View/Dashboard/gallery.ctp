@@ -20,15 +20,21 @@ foreach($val as $v){
     $parent=$v['Gallerycats']['parent_id'];
     $sub = $this->requestAction('/dashboard/getSub/'.$id);
  ?>
-<div class="list"><div class="number"><?php echo $i;?>.</div><div class="title"><?php echo $v['Gallerycats']['title']?></div>
-<div class="action" ><a href="javascript:void(0)" onclick=' $(this).find(".category-sub").show();' class="btn btn-success add<?php echo $i;?>">Add</a><a href="<?php echo $this->webroot;?>dashboard/deletecat/<?php echo $id;?>" onclick="return confirm('Are you sure you want to delete this item?');" class="btn btn-danger">Delete</a>
-</div><div class="clear"></div>
-<div class="category-sub" style="display:;">
-    <form id="myform" method="post" action="/shh/dashboard/addCategorySub/<?php echo $id;?>" novalidate="novalidate">
-<input class="required valid" type="text"  name="category-sub" placeholder="Enter Category-sub" required=""/>
-<input type="submit" class="btn btn-primary" value="Add Sub-Category"/>
-</form>
-</div>
+<div class="list">
+    <div class="wrap">
+        <div class="number"><?php echo $i;?>.</div>
+        <div class="title"><?php echo $v['Gallerycats']['title']?></div>
+        <div class="action" >
+            <a href="javascript:void(0)"  class="btn btn-success add">Add Sub-Category</a><a href="<?php echo $this->webroot;?>dashboard/deletecat/<?php echo $id;?>" onclick="return confirm('Are you sure you want to delete this item?');" class="btn btn-danger">Delete</a>
+        </div>
+        <div class="clear"></div>
+        <div class="cat-sub" style="display:none;">
+            <form id="myform" method="post" action="/shh/dashboard/addCategorySub/<?php echo $id;?>" novalidate="novalidate">
+        <input class="required valid" type="text"  name="category-sub" placeholder="Enter Category-sub" required=""/>
+        <input type="submit" class="btn btn-primary" value="Save"/>
+        </form>
+        </div>
+    </div>
  
 <ul style="list-style-type:none;">
 <?php
@@ -42,8 +48,8 @@ $j++;
 ?><li>
 <div class="list"><div class="number"><?php echo $j;?>.</div>
 <div class="title"><?php echo $s['Gallerycats']['title']?></div>
-<div class="action"><a href="javascript:void(0)" class="btn btn-success add<?php echo $j;?>">Add</a><a href="<?php echo $this->webroot;?>dashboard/deletesubcategory/<?php echo  $sub_id;?>" onclick="return confirm('Are you sure you want to delete this item?');" class="btn btn-danger">Delete</a></div><div class="clear"></div></div>
- <div class="category-sub" style="display:;">
+<div class="action"><a href="javascript:void(0)" class="btn btn-success addimg;?>">Add</a><a href="<?php echo $this->webroot;?>dashboard/deletesubcategory/<?php echo  $sub_id;?>" onclick="return confirm('Are you sure you want to delete this item?');" class="btn btn-danger">Delete</a></div><div class="clear"></div></div>
+ <div class="cat-img" style="display:;">
 <form id="myform" method="post" action="/shh/dashboard/addCategoryImg/<?php echo $sub_id;?>" novalidate="novalidate" enctype="multipart/form-data">
 <input class="required valid" type="text"  name="category-img-title" placeholder="Enter image title" required=""/><br/>
 <input class="required valid" type="file"  name="image" required="" />
@@ -101,8 +107,11 @@ $(function(){
         $(".category-add").toggle("slow");
         
     });
-    $(".click").click(function(){
-        $(this)
-    })
+    $(document.body).on('click','.add',function(){
+        $(this).parent().parent().find('.cat-sub').toggle("slow");
+     })
+     $(document.body).on('click','.addimg',function(){
+              $('.cat-img').toggle("slow");
+     })
 });
 </script>
