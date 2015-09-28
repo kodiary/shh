@@ -40,13 +40,19 @@ function index()
     $this->loadModel('Update');
     $this->loadModel('Project');
     $this->loadModel('Slider');
+    $this->loadModel('Gallerycart');
+    $this->loadModel('Galleryimg');
+    $actimg = $this->Galleryimg->find('all',array('order'=>'rand()','limit'=>9));
+    
+    
+    
     $a = $this->Page->find('first',array('conditions'=>array('id'=>2)));
     $ac = $this->Page->find('all',array('conditions'=>array('parent'=>2)));
     $d = $this->Page->find('first',array('conditions'=>array('id'=>3)));
     $dc = $this->Page->find('all',array('conditions'=>array('parent'=>3)));
     $act = $this->Page->find('first',array('conditions'=>array('id'=>4)));
     $actc = $this->Page->find('all',array('conditions'=>array('parent'=>4)));
-    $actimg = $this->Image->find('all',array('order'=>'rand()','limit'=>9));
+    //$actimg = $this->Image->find('all',array('order'=>'rand()','limit'=>9));
     $pr =  $this->Media->find('all',array('conditions'=>array('media_type'=>'Print')));
     $this->set('print',$pr);
     $pu =  $this->Media->find('all',array('conditions'=>array('media_type'=>'Publication')));

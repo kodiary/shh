@@ -5,6 +5,12 @@
         <div class="row mix-grid thumbnails">
             <div class="col-md-3 col-sm-4 mix category_1 mix_all" style="display: block; opacity: 1; ">
                 <div class="mix-inner">
+                <?php  foreach ($a as $actimg)
+                {
+                    ?><img class="img-responsive" src="<?php echo $this->webroot;?>assets/frontend/pages/img/works/img1." alt=""> <?php
+                }
+                
+                ?>
                     <img class="img-responsive" src="<?php echo $this->webroot;?>assets/frontend/pages/img/works/img1.jpg" alt="">
                     <div class="mix-details">
                         <h4>Food distribution</h4>
