@@ -1,5 +1,3 @@
-
-
 <h1>Gallery</h1>
 <a class="btn btn-success addcat" href="javascript:void(0)">Add Gallery Category</a>
     <div class="category-add" style="display:none;">
@@ -114,5 +112,7 @@ $(function(){
      $(document.body).on('click','.addimg',function(){
               $(this).parent().parent().find('.cat-img').toggle("slow");
      });
+     
+     
 });
 </script>
