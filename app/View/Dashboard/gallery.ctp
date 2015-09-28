@@ -7,7 +7,7 @@
 <input class="required valid" type="text"  name="category-name" placeholder="Enter Category Name" required=""/>
 <input type="submit" class="btn btn-primary" value="Add Category"/>
 </form>
-</div>
+</div> 
 
 <div class="category-list">
 
