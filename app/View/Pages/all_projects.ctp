@@ -27,12 +27,6 @@
                     <h2 style="padding-top: 0;">
                         <a href="<?php echo $this->webroot;?>pages/projects/<?php echo $up['Project']['slug'];?>"><?php echo $up['Project']['title'];?></a>
                     </h2>
-                    <ul class="blog-info" style="margin: 0 0 12px;">
-                        <li>
-                            <i class="fa fa-calendar"></i>
-                            <?php echo $up['Project']['added_on'];?>
-                        </li>
-                    </ul>
                     <p>
                         <em>
                             <strong>

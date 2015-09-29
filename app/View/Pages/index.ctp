@@ -94,7 +94,7 @@
             <span>Our Projects - Help us &amp; launch &amp; these projects</span>
           </div>
           <div class="col-md-3 text-right">
-            <a class="btn-transparent" href="http://www.keenthemes.com/preview/index.php?theme=metronic_admin" target="_blank">View All</a>
+            <a class="btn-transparent" href="<?php echo $this->webroot; ?>Pages/allProjects">View All</a>
           </div>
         </div>
         <!-- END BLOCKQUOTE BLOCK -->
@@ -116,7 +116,7 @@
                 </em>
                 <a class="recent-work-description" href="#">
                   <strong><?php echo $pro['Project']['title'];?></strong>
-                  <b>shh<?php// echo $pro['Project']['description'];?></b>
+                  <b>shh<?php // echo $pro['Project']['description'];?></b>
                 </a>
               </div>
                 <?php } ?>
