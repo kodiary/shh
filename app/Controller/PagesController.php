@@ -137,7 +137,7 @@ function contact()
         
         $this->loadModel('Update');        
         //$q = $this->Update->find('all',array('order'=>'id DESC'));
-        $this->paginate= array('order'=>'id DESC','limit'=>'2');
+        $this->paginate= array('order'=>'id DESC','limit'=>'10');
         $q = $this->paginate('Update');
         $this->set('updates',$q);
     }
@@ -157,7 +157,7 @@ function contact()
         
         $this->loadModel('Project');        
         //$q = $this->Update->find('all',array('order'=>'id DESC'));
-        $this->paginate= array('order'=>'id DESC','limit'=>'2');
+        $this->paginate= array('order'=>'id DESC','limit'=>'10');
         $q = $this->paginate('Project');
         $this->set('projects',$q);
     }
