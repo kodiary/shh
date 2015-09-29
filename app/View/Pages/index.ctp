@@ -1,6 +1,6 @@
 <div class="container">
         <!-- BEGIN SERVICE BOX -->   
-        <div class="row service-box margin-bottom-40">
+        <div class="row service-box service-none margin-bottom-40">
         <h2>Portfolio</h2>
         <div class="row mix-grid thumbnails">
         <?php  foreach ($category as $cat)
