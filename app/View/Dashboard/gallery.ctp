@@ -1,8 +1,8 @@
 <h1>Gallery</h1>
 <a class="btn btn-success addcat" href="javascript:void(0)">Add Gallery Category</a>
     <div class="category-add" style="display:none;">
-    <form id="myform" method="post" action="/shh/dashboard/addCategory" novalidate="novalidate">
-<input class="required valid" type="text"  name="category-name" placeholder="Enter Category Name" required=""/>
+    <form id="myform" method="post" action="/shh/dashboard/addCategory" >
+<input class="required " type="text"  name="category-name" placeholder="Enter Category Name" required="required"/>
 <input type="submit" class="btn btn-primary" value="Add Category"/>
 </form>
 </div> 
@@ -27,8 +27,8 @@ foreach($val as $v){
         </div>
         <div class="clear"></div>
         <div class="cat-sub" style="display:none;">
-            <form id="myform" method="post" action="/shh/dashboard/addCategorySub/<?php echo $id;?>" novalidate="novalidate">
-        <input class="required valid" type="text"  name="category-sub" placeholder="Enter Category-sub" required=""/>
+            <form id="myform" method="post" action="/shh/dashboard/addCategorySub/<?php echo $id;?>" >
+        <input class="required " type="text"  name="category-sub" placeholder="Enter Category-sub" required="required"/>
         <input type="submit" class="btn btn-primary" value="Save"/>
         </form>
         </div>
@@ -48,9 +48,9 @@ $j++;
 <div class="title"><?php echo $s['Gallerycats']['title']?></div>
 <div class="action"><a href="javascript:void(0)" class="btn btn-success addimg">Add Category-Img</a><a href="<?php echo $this->webroot;?>dashboard/deletesubcategory/<?php echo  $sub_id;?>" onclick="return confirm('Are you sure you want to delete this item?');" class="btn btn-danger">Delete</a></div><div class="clear"></div>
  <div class="cat-img" style="display:none;">
-<form id="myform" method="post" action="/shh/dashboard/addCategoryImg/<?php echo $sub_id;?>" novalidate="novalidate" enctype="multipart/form-data">
-<input class="required valid" type="text"  name="category-img-title" placeholder="Enter image title" required=""/><br/>
-<input class="required valid" type="file"  name="image" required="" />
+<form id="myform" method="post" action="/shh/dashboard/addCategoryImg/<?php echo $sub_id;?>"  enctype="multipart/form-data">
+<input class="required " type="text"  name="category-img-title" placeholder="Enter image title" required="required"/><br/>
+<input class="required " type="file"  name="image" required="" />
 <input type="submit" class="btn btn-primary" value="save"/>
 </form>
 </div>
