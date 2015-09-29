@@ -33,7 +33,14 @@
         
         <p>&nbsp;</p>
         <p>&nbsp;</p>
-        <h2>Latest Events</h2>
+        <div class="row quote-v1 margin-bottom-30">
+    <div class="col-md-9">
+    <span>Latest Events</span>
+    </div>
+    <div class="col-md-3 text-right">
+    <a class="btn-transparent" href="<?php echo $this->webroot; ?>event">View All</a>
+    </div>
+    </div>
         <p>&nbsp;</p>
         <div class="content-page">
         <div class="row">
@@ -94,7 +101,7 @@
             <span>Our Projects - Help us &amp; launch &amp; these projects</span>
           </div>
           <div class="col-md-3 text-right">
-            <a class="btn-transparent" href="<?php echo $this->webroot; ?>Pages/allProjects">View All</a>
+            <a class="btn-transparent" href="<?php echo $this->webroot; ?>project">View All</a>
           </div>
         </div>
         <!-- END BLOCKQUOTE BLOCK -->
@@ -111,7 +118,7 @@
               <div class="recent-work-item">
                 <em>
                   <img src="<?php echo $this->webroot;?>doc/<?php echo $pro['Project']['image'];?>" alt="Amazing Project" class="img-responsive">
-                  <a href="portfolio-item.html"><i class="fa fa-link"></i></a>
+                  <a href="<?php echo $this->webroot;?>Pages/projects/<?php echo $pro['Project']['slug'] ; ?>"><i class="fa fa-link"></i></a>
                   <a href="<?php echo $this->webroot;?>doc/<?php echo $pro['Project']['image'];?>" class="fancybox-button" title="Project Name #1" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
                 </em>
                 <a class="recent-work-description" href="#">
