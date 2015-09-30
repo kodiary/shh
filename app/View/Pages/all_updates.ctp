@@ -14,16 +14,14 @@
             <div class="events">
                
                 
-                <div class="col-md-2 col-sm-4" style="padding-top: 7px;">
-                    <div class="">
+                <div class="col-md-2 col-sm-4 col-xs-12" style="padding-top: 7px;">
                         <div class="item">
                             <img style="max-width: 100%;" src="<?php echo $this->webroot;?>doc/<?php echo $up['Update']['image'];?>" />
                         </div>
-                    </div>
                 </div>
 
 
-                <div class="col-md-10 col-sm-8">
+                <div class="col-md-10 col-sm-8 col-xs-12">
                     <h2 style="padding-top: 0;">
                         <a href="<?php echo $this->webroot;?>pages/updates/<?php echo $up['Update']['slug'];?>"><?php echo $up['Update']['title'];?></a>
                     </h2>
@@ -34,12 +32,8 @@
                         </li>
                     </ul>
                     <p>
-                        <em>
-                            <strong>
                                 <?php echo substr(strip_tags($up['Update']['description']),0,150).'...' ?>
-                            
-                            </strong>
-                        </em>
+                    
                     </p>
                 </div>
                 <div class="clearfix"></div>

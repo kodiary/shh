@@ -167,12 +167,11 @@
           <div class="col-md-4 col-sm-6 pre-footer-col">
             <h2>Our Contacts</h2>
             <address class="margin-bottom-40">
-              Sample street Address<br>
-              Kathmandu, Nepal<br>
-              Phone: 123 456 7899<br>
-              Fax: 300 323 1456<br>
-              Email: <a href="mailto:info@shhnepal.org">info@shhnepal.org</a><br>
-              Skype: <a href="skype:shhnepal">shhnepal</a>
+              <strong>Address</strong> : Kathmandu, Nepal<br>
+              <strong>Phone</strong> : 123 456 7899<br>
+              <strong>Fax</strong> : 300 323 1456<br>
+              <strong>Email</strong> : <a href="mailto:info@shhnepal.org">info@shhnepal.org</a><br>
+              <strong>Skype</strong> : <a href="skype:shhnepal">shhnepal</a>
             </address>
 
             

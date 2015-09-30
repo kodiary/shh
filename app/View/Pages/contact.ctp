@@ -4,7 +4,7 @@
             <h1 class="title"><span>Contact Us:</span></h1>
             <?php echo $this->Session->flash();?>
             <div class="row margin-bottom-20">
-        						<div class="col-md-6">
+        						<div class="col-md-6 col-sm-6 col-xs-12">
         							<div class="space20">
         							</div>
         							<h3 class="form-section">Contacts</h3>
@@ -59,7 +59,7 @@
         								</ul>
         							</div>
         						</div>
-        						<div class="col-md-6">
+        						<div class="col-md-6 col-sm-6 col-xs-12">
         							<div class="space20">
         							</div>
         							<!-- BEGIN FORM-->

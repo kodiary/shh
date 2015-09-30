@@ -2,9 +2,9 @@
 if($media['Media']['file']){
 ?>
 <p style="margin-top: 10px;">
-<audio controls>
-  <source src="<?php echo $this->webroot;?>doc/<?php echo $media['Media']['file'];?>" type="audio/ogg">
-  <source src="<?php echo $this->webroot;?>doc/<?php echo $media['Media']['file'];?>" type="audio/mpeg">
+<audio>
+  <source src="<?php echo $this->webroot;?>doc/<?php echo $media['Media']['file'];?>" type="audio/ogg" />
+  <source src="<?php echo $this->webroot;?>doc/<?php echo $media['Media']['file'];?>" type="audio/mpeg" />
 Your browser does not support the audio element.
 </audio>
 </p> 

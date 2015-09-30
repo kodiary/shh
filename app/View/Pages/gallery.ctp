@@ -8,7 +8,7 @@
                                   $randimg = $this->requestAction('/Pages/getImg/'.$cat['Gallerycat']['id']);
                                 //$randimg = $this->requestAction('/pages/getImg/'.$cat['Gallerycat']['id']);
                                 ?>
-                        <div class="col-md-3 col-sm-4 mix category_1 mix_all" style="display: block; opacity: 1; ">
+                        <div class="col-md-3 col-sm-4 col-xs-12 mix category_1 mix_all" style="display: block; opacity: 1; ">
                             <div class="mix-inner">
                             
                                 <img class="img-responsive" src="<?php echo $this->webroot;?>galleryimgs/<?php echo $randimg; ?>" alt="">

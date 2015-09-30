@@ -2,7 +2,7 @@
 <div class="container">
 <div class="row service-box margin-bottom-40">
                         
-                        <h2>Media ><small> <?php echo $slug;if($year){?>  <?php echo $year; }?></small></h2>
+                        <h2>Media<small> <?php echo $slug;if($year){?>  <?php echo $year; }?></small></h2>
                         <div class="description">
                                     <?php
                                     foreach($media as $p)

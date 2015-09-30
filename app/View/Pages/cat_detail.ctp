@@ -17,7 +17,7 @@
                                         
                                  ?>
                                  
-                                            <div class="col-md-3 col-sm-4 mix category_1 mix_all" style="display: block; opacity: 1; ">
+                                            <div class="col-md-3 col-sm-4 col-xs-12 mix category_1 mix_all" style="display: block; opacity: 1; ">
                             <div class="mix-inner">
                                     <img  src="<?php echo $this->webroot; ?>galleryimgs/<?php echo $a['Galleryimg']['img']; ?>" width="250px" height="auto"/>
                                       <div class="mix-details">
