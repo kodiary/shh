@@ -13,12 +13,12 @@
                                             if($slug!='Audio-Visual' && $slug!='Broadcasting'){
                                             ?>
                                             <div style="padding:5px 10px;background:#e5e5e5;border-radius:10px;">
-                                            <div class="mtitle left" style="width: 480px;margin-right:15px;">
+                                            <div class="mtitle left col-md-10 col-sm-10 col-xs-12" style="width: 480px;margin-right:15px;">
                                             <strong><?php echo $p['Media']['title'];?></strong><br />
                                             <span style="font-size: 12px;color:green;">
                                             Uploaded on: <?php echo $p['Media']['added_on'];?></span></div>
-                                            <div class="action right"><a href="javascript:void(0)" class="open-popup-link btn media"  onclick="$('.popover').html('<iframe src='http://docs.google.com/gview?url=<?php echo $this->Html->url('/', true);?>/doc/'.<?php echo $p['Media']['file'];?>.'&embedded=true' style='width:600px; height:500px;' frameborder='0'></iframe>')" >View</a></div>
-                                            <div class="clear"></div>
+                                            <div class="action right col-md-2 col-sm-2 col-xs-12"><a href="javascript:void(0)" class="open-popup-link btn media"  onclick="$('.popover').html('<iframe src='http://docs.google.com/gview?url=<?php echo $this->Html->url('/', true);?>/doc/'.<?php echo $p['Media']['file'];?>.'&embedded=true' style='width:600px; height:500px;' frameborder='0'></iframe>')" >View</a></div>
+                                            <div class="clearfix"></div>
                                             </div>
                                             <?php }
                                             else
@@ -26,7 +26,7 @@
                                                 ?>
                                                 <div style="padding:5px 10px;background:#e5e5e5;border-radius:10px;">
                                                 <div class="mtitle left" style="width: 480px;margin-right:15px;padding:5px 10px;background:#e5e5e5;border-radius:10px;"><strong><?php echo $p['Media']['title'];?></strong><br /><span style="font-size: 12px;color:green;">Uploaded on: <?php echo $p['Media']['added_on'];?></span></div><div class="action right"><a class="btn" href="javascript:void(0)" class="open-popup-link" onclick="$('.popover').load('<?php echo $this->webroot;?>pages/player/<?php echo $p['Media']['id'];?>');$('.popover').attr('title','<?php echo $p['Media']['title'];?>');$('.popover').dialog({modal:true,width:<?php if($p['Media']['file']){?>355<?php }else{?>555<?php }?>});">View</a></div>
-                                                <div class="clear"></div>
+                                                <div class="clearfix"></div>
                                                 </div>
                                                 <?php
                                             }
