@@ -3,7 +3,7 @@
 }
 
 .tp-bullets.simplebullets.round .bullet {
-  background: #578ebe !important;
+  background: #6aa1d1 !important;
   	-webkit-transition: all 0.7s ease-in-out;
 	-moz-transition: all 0.7s ease-in-out;
 	-o-transition: all 0.7s ease-in-out;
@@ -143,6 +143,12 @@
 .mtitle span {
   display: block;
   margin-top: 5px;
+}
+
+.revolution-slider .caption {
+  font-size: 20px !important;
+  font-weight: 600;
+  text-shadow: 0 0 2px #fff;
 }
 
 

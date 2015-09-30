@@ -116,7 +116,7 @@
               <!-- THE MAIN IMAGE IN THE FIRST SLIDE -->
               <img src="<?php echo $this->webroot;?>banners/<?php echo $sli['Slider']['image'];?>" alt="">
               
-              <div class="caption lft slide_title_white slide_item_left" style="background-color:rgba(0,0,255,0.5);padding:10px;"
+              <div class="caption lft slide_title_white slide_item_left" style="background-color:rgba(48, 108, 160, 0.7);padding:10px;"
                 data-x="30"
                 data-y="300"
                 data-speed="400"
