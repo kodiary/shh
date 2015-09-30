@@ -9,7 +9,7 @@
 <label>Image</label>
 <input type="file" name="file" class=""/> Minimum size 368 X 264<br />
 Current Image<br />
-<img src="<?php echo $this->webroot;?>doc/<?php echo $model['Update']['image'];?>" width="100px;"/>
+<img src="<?php echo $this->webroot;?>doc/thumb/<?php echo $model['Update']['image'];?>" width="100px;"/>
 <hr />
 <input type="submit" value="Save" name="submit" class="btn btn-primary btn-large" />
 </form>

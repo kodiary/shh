@@ -391,9 +391,8 @@ class DashboardController extends AppController
                  $iname = rand(100000,999999).'_'.rand(100000,999999);
                  $rand=$iname.'.'.$ext;
                 $path=APP.'webroot/doc/'.$rand;
-                $resize = $iname.'.'.$ext;
-                $thumbpath=APP.'webroot/doc/thumb/'.$resize; 
-                $thumbpath1=APP.'webroot/doc/thumblarge/'.$resize;
+                 $thumbpath=APP.'webroot/doc/thumb/'.$rand; 
+                $thumbpath1=APP.'webroot/doc/thumblarge/'.$rand;
                
                 move_uploaded_file($_FILES['file']['tmp_name'],$path);
                $resizeObj = new resize($path);
@@ -432,9 +431,8 @@ class DashboardController extends AppController
                 $iname = rand(100000,999999).'_'.rand(100000,999999);
                  $rand=$iname.'.'.$ext;
                 $path=APP.'webroot/doc/'.$rand;
-                $resize = $iname.'.'.$ext;
-                $thumbpath=APP.'webroot/doc/thumb/'.$resize;
-                $thumbpath1=APP.'webroot/doc/thumblarge/'.$resize;
+                $thumbpath=APP.'webroot/doc/thumb/'.$rand;
+                $thumbpath1=APP.'webroot/doc/thumblarge/'.$rand;
                 move_uploaded_file($_FILES['file']['tmp_name'],APP.'webroot/doc/'.$rand);
                  $resizeObj = new resize($path);
                  $resizeObj -> resizeImage(250, 180,'exact');
@@ -483,9 +481,21 @@ class DashboardController extends AppController
                 $file = $_FILES['file']['name'];
                  $arr = explode('.',$file);
                 $ext = end($arr);
-                $rand = rand(100000,999999).'_'.rand(100000,999999).'.'.$ext;
+                 $iname = rand(100000,999999).'_'.rand(100000,999999);
+                 $rand=$iname.'.'.$ext;
+                $path=APP.'webroot/doc/'.$rand;
+                 $thumbpath=APP.'webroot/doc/thumb/'.$rand; 
+                $thumbpath1=APP.'webroot/doc/thumblarge/'.$rand;
                 move_uploaded_file($_FILES['file']['tmp_name'],APP.'webroot/doc/'.$rand);
-                $_POST['image'] = $rand;
+                 $resizeObj = new resize($path);
+                $resizeObj -> resizeImage(250, 180,'exact');
+                $resizeObj -> saveImage($thumbpath, 100);
+                unset($resizeObj);
+               $resizeObj = new resize($path);
+             $resizeObj -> resizeImage(600, 432,'exact');
+             $resizeObj -> saveImage($thumbpath1, 100);
+              unlink($path);
+               $_POST['image'] = $rand;
                 $_POST['added_on'] = date('Y-m-d');
                 $whiteSpace = '';  //if you dnt even want to allow white-space set it to ''
                 $pattern = '/[^a-zA-Z0-9-_'  . $whiteSpace . ']/u';
@@ -510,8 +520,20 @@ class DashboardController extends AppController
                 $file = $_FILES['file']['name'];
                  $arr = explode('.',$file);
                 $ext = end($arr);
-                $rand = rand(100000,999999).'_'.rand(100000,999999).'.'.$ext;
+               $iname = rand(100000,999999).'_'.rand(100000,999999);
+                 $rand=$iname.'.'.$ext;
+                $path=APP.'webroot/doc/'.$rand;
+                 $thumbpath=APP.'webroot/doc/thumb/'.$rand; 
+                $thumbpath1=APP.'webroot/doc/thumblarge/'.$rand;
                 move_uploaded_file($_FILES['file']['tmp_name'],APP.'webroot/doc/'.$rand);
+                 $resizeObj = new resize($path);
+                $resizeObj -> resizeImage(250, 180,'exact');
+                $resizeObj -> saveImage($thumbpath, 100);
+                unset($resizeObj);
+               $resizeObj = new resize($path);
+             $resizeObj -> resizeImage(600, 432,'exact');
+             $resizeObj -> saveImage($thumbpath1, 100);
+              unlink($path);
                 $_POST['image'] = $rand;
                 }
                 //$_POST['added_on'] = date('Y-m-d');
@@ -523,6 +545,12 @@ class DashboardController extends AppController
         function deleteProject($id)
         {
             $this->loadModel('Project');
+            $arr['conditions']=array('id'=>$id);
+           $q= $this->Project->find('first',$arr);
+            $path=APP.'webroot/doc/thumb/'.$q['Update']['image'];
+             $path1=APP.'webroot/doc/thumblarge/'.$q['Update']['image'];
+             unlink($path);
+             unlink($path1);
             $this->Project->delete($id);
             $this->redirect('project');
         }
