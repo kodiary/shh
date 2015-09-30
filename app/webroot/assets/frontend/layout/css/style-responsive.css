@@ -120,8 +120,8 @@
 	.header .header-navigation li.active > a,
 	.header .header-navigation li.open > a:hover {
 		border-bottom: 1px solid #efefef !important;
-		background: none !important;
-		color: #dd4632 !important;
+		background: #306ca0 !important;
+		color: #fff !important;
 		text-decoration: none;
 	}
 

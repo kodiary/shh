@@ -476,8 +476,8 @@ body.page-header-fixed {
   display: none;
 }
 .header .mobi-toggler:hover {
-  background: #e34f00 url(../img/icons/toggler.png) no-repeat 6px -28px;
-  border-color: #e34f00;
+  background: #306ca0 url(../img/icons/toggler.png) no-repeat 6px -28px;
+  border-color: #306ca0;
   color: #fff;
 }
 
