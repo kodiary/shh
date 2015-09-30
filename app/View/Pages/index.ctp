@@ -60,7 +60,7 @@
                 <div class="row">
                     <div class="col-md-2 col-sm-4 col-xs-12" style="padding-top: 7px;">
                                 <div class="item">
-                                <img src="<?php echo $this->webroot;?>doc/<?php echo $up['Update']['image'];?>" alt="" style="max-width: 100%;">
+                                <img src="<?php echo $this->webroot;?>doc/thumb/<?php echo $up['Update']['image'];?>" alt="" style="max-width: 100%;">
                                 </div>            
                         </div>
                     

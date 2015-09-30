@@ -3,22 +3,7 @@
 <form action="" method="post" id="myform" enctype="multipart/form-data">
 <label>Title</label>
 <input type="text" name="title" class="required" value="<?php echo $model['Update']['title'];?>" />
-<label>Choose Activity</label>
-<select name="act_id">
-    <option value="">Choose Activity</option>
-    <?php
-    if($acts)
-    {
-        foreach($acts as $a)
-        {
-            ?>
-            <option value="<?php echo $a['Page']['id'];?>" <?php if($a['Page']['id']==$model['Update']['act_id']){?>selected="selected"<?php }?>><?php echo $a['Page']['title'];?></option>
-            <?php
-        }
-    }
-    ?>
-    
-</select>
+
 <label>Description</label>
 <textarea name="description" class="ckeditor required"><?php echo $model['Update']['description'];?></textarea>
 <label>Image</label>
