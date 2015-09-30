@@ -17,7 +17,7 @@
                 <div class="col-md-2 col-sm-4" style="padding-top: 7px;">
                     <div class="">
                         <div class="item">
-                            <img style="max-width: 100%;" src="<?php echo $this->webroot;?>doc/<?php echo $up['Update']['image'];?>" />
+                            <img style="max-width: 100%;" src="<?php echo $this->webroot;?>doc/thumb/<?php echo $up['Update']['image'];?>" />
                         </div>
                     </div>
                 </div>
