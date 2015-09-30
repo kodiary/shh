@@ -395,7 +395,7 @@ class DashboardController extends AppController
                  $rand=$iname.'.'.$ext;
                 $path=APP.'webroot/doc/'.$rand;
                 $resize = $iname.'.'.$ext;
-                $thumbpath=APP.'webroot/doc/thumb/'.$resize;
+                $thumbpath=APP.'webroot/doc/thumb/'.$resize; 
                 $thumbpath1=APP.'webroot/doc/thumblarge/'.$resize;
                
                 move_uploaded_file($_FILES['file']['tmp_name'],$path);
