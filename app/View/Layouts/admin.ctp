@@ -9,10 +9,12 @@
 		<title>Islami Sangh Nepal</title>
 			<link href="<?php echo $this->webroot;?>css/admin.css" rel="stylesheet" type="text/css" />
             <link href="<?php echo $this->webroot;?>css/bootstrap.css" rel="stylesheet" type="text/css" />
-            <script src="http://code.jquery.com/jquery-1.10.1.min.js" type="text/javascript"></script>
+            <script src="<?php echo $this->webroot;  ?>js/jquery.min.js" type="text/javascript"></script>
             <script type="text/javascript" src="<?php echo $this->webroot;?>js/ajaxupload.3.6.js"></script>
             <script type="text/javascript" src="<?php echo $this->webroot;?>js/ckeditor/ckeditor.js"></script>
+            <!--
             <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"></script>
+            -->
 		
 		
 	</head>

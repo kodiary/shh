@@ -1,4 +1,5 @@
 <?php
+    App::uses('Resize', 'Lib');
 class DashboardController extends AppController
 {
     
@@ -572,7 +573,6 @@ class DashboardController extends AppController
         function addCategory(){
             $this->loadModel('Gallerycats');
             $arr['title']=$_POST['category-name'];
-          // debug($arr);
             $this->Gallerycats->create();
             $this->Gallerycats->save($arr);
             $this->redirect('/dashboard/gallery');
@@ -616,25 +616,37 @@ class DashboardController extends AppController
             $this->redirect('/dashboard/gallery');
             }
         }
-        function addCategoryImg($id){
-           
-             if(isset($_POST) && $_POST)
+        function addCategoryImg($id)
+        {       
+            if(isset($_FILES['image']['name']) && $_FILES['image']['name'])
             {
             $name = $_FILES['image']['name'];
-           
             $arr = explode('.',$name);
             $ext = end($arr);
-            $rand = rand(10000000,99999999).'_'.rand(10000,99999).'.'.$ext;
-            move_uploaded_file($_FILES['image']['tmp_name'],APP.'webroot/galleryimgs/'.$rand);
+            $rand = rand(1000000,9999999);
+            $filename = $rand.'.'.$ext;
+            $path = APP.'webroot/profile/'.$filename;
+            move_uploaded_file($_FILES['image']['tmp_name'],$path);
+            $resizeObj = new Resize($path);
+            $resizeObj -> resizeImage(250, 180,'exact');
+            $resizeObj -> saveImage(APP.'webroot/profile_resize/'.$filename, 100);
+            //echo $path;die();
+            unset($resizeObj);
+            $resizeObj = new Resize($path);
+            $resizeObj -> resizeImage(600, 432,'exact');
+            $resizeObj -> saveImage('profile_resize1/'.$filename, 100);
+            unlink($path);
+            }
+             
             $this->loadModel('Galleryimgs');
-            $arr['img']=$rand;
+            $arr['img']=$filename;
             $arr['title']=$_POST['category-img-title'];
             $arr['cat_id']=$id;
             
             $this->Galleryimgs->create();
             $this->Galleryimgs->save($arr);
             $this->redirect('/dashboard/gallery');
-            }
+            
         }
         function deleteImg($id){
             

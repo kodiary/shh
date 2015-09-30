@@ -69,7 +69,7 @@ $iid=$img['Galleryimgs']['id'];
 <li>
 <div class="list1"><div class="number"><?php echo $k;?>.</div>
 <div class="title"><?php echo $img['Galleryimgs']['title']?></div>
-<div><img src="<?php echo $this->webroot.'galleryimgs/'.$img['Galleryimgs']['img']?>" height="50px" width="50px" /></div>
+<div><img src="<?php echo $this->webroot.'profile_resize/'.$img['Galleryimgs']['img']?>" height="50px" width="50px" /></div>
 <div class="action">
 <a href="<?php echo $this->webroot;?>dashboard/deleteImage/<?php echo $iid;?>" onclick="return confirm('Are you sure you want to delete this item?');"class="btn btn-danger">Delete</a>
 </div>
