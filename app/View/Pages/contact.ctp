@@ -1,7 +1,6 @@
 <div class="main clearfix">
     <div class="container">
         <div class="wrapper" style="margin:20px 0;">
-            <h1 class="title"><span>Contact Us:</span></h1>
             <?php echo $this->Session->flash();?>
             <div class="row margin-bottom-20">
         						<div class="col-md-6 col-sm-6 col-xs-12">
@@ -14,14 +13,12 @@
         							<div class="well">
         								<h4>Address</h4>
         								<address>
-        								<strong>Loop, Inc.</strong><br>
-        								 123 Park Ave, Suite 120<br>
-        								 City, XY 123<br>
-        								<abbr title="Phone">P:</abbr> (234) 145-1810 </address>
+        								<strong>Social Helping Hands Nepal</strong><br>
+        								 Baluwatar,Kathmandu, Nepal<br>
+        								<abbr title="Phone">P:</abbr>  +977-9807388399 </address>
         								<address>
         								<strong>Email</strong><br>
-        								<a href="mailto:#">
-        								first.last@email.com </a>
+        								<a href="mailto:info@shhnepal.org">info@shhnepal.org</a>
         								</address>
         								<ul class="social-icons margin-bottom-10">
         									<li>
@@ -89,7 +86,7 @@
         								<div class="form-group">
         									<textarea class="form-control" rows="3=6" placeholder="Feedback" name="message"></textarea>
         								</div>
-        								<button type="submit" class="btn green">Submit</button>
+        								<button type="submit" class="btn blue">Submit</button>
         							</form>
         							<!-- END FORM-->
         						</div>
