@@ -99,9 +99,9 @@
                 <?php foreach($projects as $pro){?>
               <div class="recent-work-item">
                 <em>
-                  <img src="<?php echo $this->webroot;?>doc/<?php echo $pro['Project']['image'];?>" alt="Amazing Project" class="img-responsive">
+                  <img src="<?php echo $this->webroot;?>doc/thumb/<?php echo $pro['Project']['image'];?>" alt="Amazing Project" class="img-responsive">
                   <a href="<?php echo $this->webroot;?>Pages/projects/<?php echo $pro['Project']['slug'] ; ?>"><i class="fa fa-link"></i></a>
-                  <a href="<?php echo $this->webroot;?>doc/<?php echo $pro['Project']['image'];?>" class="fancybox-button" title="Project Name #1" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
+                  <a href="<?php echo $this->webroot;?>doc/thumblarge/<?php echo $pro['Project']['image'];?>" class="fancybox-button" title="Project Name #1" data-rel="fancybox-button"><i class="fa fa-search"></i></a>
                 </em>
                 <a class="recent-work-description" href="#">
                   <strong><?php echo $pro['Project']['title'];?></strong>

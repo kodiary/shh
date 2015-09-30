@@ -1,3 +1,4 @@
+<?php echo $this->Html->url('/', true);?>
 <div class="main clearfix">
 <div class="container">
 <div class="row service-box margin-bottom-40"  style="margin:20px 0;">

@@ -19,7 +19,10 @@
                                             <span style="font-size: 12px;color:#578ebe;">
                                             Uploaded on: <?php echo $p['Media']['added_on'];?></span></div>
 
-                                            <div class="action right col-md-1 col-sm-1 col-xs-12"><a href="javascript:void(0)" class="open-popup-link btn media fancybox-button" data-rel="fancybox-button" >View</a></div>
+                                            <div class="action right col-md-1 col-sm-1 col-xs-12">
+                                            <a href="javascript:void(0)" class="open-popup-link btn media " >View</a>
+                                            
+                                            </div>
 
                                             
 
@@ -43,15 +46,14 @@
                                     ?>
                                 </div>
                                </div>
-                               <div  class="popover"  title="test"> 
-                                dsfasdfadsf
+                                <div class="popover">
+                                
+                                
                                 </div>
                                
                                </div>
                                </div></div>
-                                <style>
-       
-	</style>
+  
     <script type="text/javascript">
   $(function(){
     
@@ -60,6 +62,11 @@
   $(".popover").html('<iframe src="http://docs.google.com/gview?url=<?php echo $this->Html->url('/', true);?>/doc/<?php echo $p['Media']['file'];?>&embedded=true" style="width:600px; height:500px;" frameborder="0"></iframe>');
     
     })
+    
+    $('.open-popup-link').click(function(){
+       $('.popover').dialog(); 
+    });
   })
 </script>
+
 
