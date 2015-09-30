@@ -1,10 +1,9 @@
 <?php
-<<<<<<< HEAD
-    App::uses('Resize', 'Lib');
-=======
+
+
 App::uses('Rsize','Lib');
 App::load("Rsize");
->>>>>>> 9168430af065953c020ffcea17d34e5e48cabc73
+
 class DashboardController extends AppController
 {
     
