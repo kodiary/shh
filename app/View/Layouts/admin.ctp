@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Islami Sangh Nepal</title>
+		<title>SHH -Nepal</title>
 			<link href="<?php echo $this->webroot;?>css/admin.css" rel="stylesheet" type="text/css" />
             <link href="<?php echo $this->webroot;?>css/bootstrap.css" rel="stylesheet" type="text/css" />
             <script src="<?php echo $this->webroot;  ?>js/jquery.min.js" type="text/javascript"></script>
@@ -21,7 +21,7 @@
 	<body>
     <div class="wrapper">
     <div class="header">
-        <h3>ISN Admin Panel</h3>
+        <h3>SHH Admin Panel</h3>
         <ul style="width:75%;">
             <li><a href="<?php echo $this->webroot;?>dashboard/">Home</a></li>
             <li><a href="<?php echo $this->webroot;?>dashboard/pages">Pages</a></li>
@@ -42,7 +42,7 @@
     </div>
     <div class="footer">
         <hr />
-        &copy; Copyright 2014. Islamic Sangh Nepal<br />Powered by <a href="http://web-nepal.com/">Web-Nepal</a>
+        &copy; Copyright 2014. SHH<br />Powered by <a href="http://www.kodiary.com/">Kodiary</a>
     </div>
     </div>
     </body>
