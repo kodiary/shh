@@ -1,5 +1,10 @@
 <?php
+<<<<<<< HEAD
     App::uses('Resize', 'Lib');
+=======
+App::uses('Rsize','Lib');
+App::load("Rsize");
+>>>>>>> 9168430af065953c020ffcea17d34e5e48cabc73
 class DashboardController extends AppController
 {
     
@@ -386,8 +391,21 @@ class DashboardController extends AppController
                 $file = $_FILES['file']['name'];
                  $arr = explode('.',$file);
                 $ext = end($arr);
-                $rand = rand(100000,999999).'_'.rand(100000,999999).'.'.$ext;
-                move_uploaded_file($_FILES['file']['tmp_name'],APP.'webroot/doc/'.$rand);
+                 $rand = rand(100000,999999).'_'.rand(100000,999999).'.'.$ext;
+                $path=APP.'webroot/doc/'.$rand;
+                $resize = $rand.'_thumb.'.$ext;
+                $thumbpath=APP.'webroot/doc/thumb'.$resize;
+                
+               
+                move_uploaded_file($_FILES['file']['tmp_name'],$path);
+            $resizeObj = new resize($path);
+    $resizeObj -> resizeImage(250, 180,'exact');
+    $resizeObj -> saveImage($thumbpath, 100);
+    unset($resizeObj);
+    $resizeObj = new resize($path);
+    $resizeObj -> resizeImage(600, 432,'exact');
+    $resizeObj -> saveImage($thumbpath, 100);
+    unlink($path);
                 $_POST['image'] = $rand;
                 $_POST['added_on'] = date('Y-m-d');
                 $whiteSpace = '';  //if you dnt even want to allow white-space set it to ''

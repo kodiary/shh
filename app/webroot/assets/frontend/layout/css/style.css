@@ -422,7 +422,7 @@ Pre-Header and pre-header elements
 Header and header elements
 ***/
 .header {
-	background: #5e8da8 none repeat scroll 0 0;
+	background: #578ebe none repeat scroll 0 0;
     border-radius: 0;
     box-shadow: 0 1px 3px #94aab6;
     margin-bottom: 23px;
@@ -484,7 +484,7 @@ body.page-header-fixed {
 /* Navigation */
 .header-navigation {
 	font: 15px "Open Sans", sans-serif;
-	margin: 0 10px 0 0;
+	margin: 25px 10px 0 0;
 	padding: 0;
 	float: left;
 	text-transform: uppercase;
@@ -500,7 +500,11 @@ body.page-header-fixed {
 .header-navigation > ul > li > a {
 	color: #fff;
     display: block;
-    padding: 29px 12px 30px;
+    padding: 8px 12px;
+    	-webkit-transition: all 0.7s ease-in-out;
+	-moz-transition: all 0.7s ease-in-out;
+	-o-transition: all 0.7s ease-in-out;
+	transition: all 0.7s ease-in-out;
 }
 .header-navigation ul > li.active > a,
 .header-navigation ul > li > a:hover,
@@ -508,9 +512,13 @@ body.page-header-fixed {
 .header-navigation ul > li.open > a,
 .header-navigation ul > li.open > a:hover,
 .header-navigation ul > li.open > a:focus {
-	color: #e02222;
-	background: #fcfcfc;
+	color: #fff;
+	background: #306ca0;
 	text-decoration: none;
+    	-webkit-transition: all 0.7s ease-in-out;
+	-moz-transition: all 0.7s ease-in-out;
+	-o-transition: all 0.7s ease-in-out;
+	transition: all 0.7s ease-in-out;
 }
 .header-navigation ul > li.active > a {
 	border-bottom: 2px solid #e64f00;
@@ -1431,8 +1439,10 @@ div.content-form-page .checkbox-list {
 Pre-Footer and pre-footer elements
 ***/
 .pre-footer {
-	background: #5e8da8 none repeat scroll 0 0;
+    background: #578ebe none repeat scroll 0 0;
     color: #f5f5f5;
+    font-weight: 400 ;
+    font-style: normal;
 }
 .pre-footer .container {
 	padding-top: 45px;
@@ -1682,7 +1692,7 @@ Pre-Footer and pre-footer elements
 
 /* footer */
 .footer {
-	background: #000e38 none repeat scroll 0 0;
+	background: #306ca0 none repeat scroll 0 0;
 	color: #fff;
 	font-size: 12px;
 	padding: 15px 0;
@@ -1696,16 +1706,24 @@ Pre-Footer and pre-footer elements
 }
 .footer a {
 	color: #fff;
-	text-decoration: underline;
+	text-decoration: none;
+    	-webkit-transition: all 0.7s ease-in-out;
+	-moz-transition: all 0.7s ease-in-out;
+	-o-transition: all 0.7s ease-in-out;
+	transition: all 0.7s ease-in-out;
 }
 .footer a:hover {
-	text-decoration: none;
+	text-decoration: underline;
+    	-webkit-transition: all 0.7s ease-in-out;
+	-moz-transition: all 0.7s ease-in-out;
+	-o-transition: all 0.7s ease-in-out;
+	transition: all 0.7s ease-in-out;
 }
 .footer-light a {
 	color: inherit;
 }
 .footer .padding-top-10 {
-	opacity: 0.5;
+	text-align: center;
 }
 .footer .list-inline > li:last-child {
 	padding-right: 0;
