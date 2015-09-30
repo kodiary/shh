@@ -55,7 +55,7 @@
                             <div class="">
                            
                                 <div class="item">
-                                <img src="<?php echo $this->webroot;?>doc/<?php echo $up['Update']['image'];?>" alt="" style="max-width: 100%;">
+                                <img src="<?php echo $this->webroot;?>doc/thumb/<?php echo $up['Update']['image'];?>" alt="" style="max-width: 100%;">
                                 </div>            
                             
                             </div>
