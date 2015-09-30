@@ -151,6 +151,20 @@
   text-shadow: 0 0 2px #fff;
 }
 
+.ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-front.ui-draggable.ui-resizable {
+  left: 50% !important;
+  margin-left: -150px !important;
+  top: 20% !important;
+  width: 300px !important;
+  z-index: 999 !important;
+}
+
+.ui-dialog-titlebar button {
+  background: rgba(0, 0, 0, 0) url("../images/close.png") no-repeat scroll center center / 60% auto;
+  height: 20px !important;
+  width: 22px !important;
+}
+
 
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
