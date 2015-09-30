@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 28, 2015 at 07:37 AM
+-- Generation Time: Sep 30, 2015 at 08:11 AM
 -- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -50,19 +50,7 @@ CREATE TABLE IF NOT EXISTS `gallerycats` (
 `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `parent_id` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
-
---
--- Dumping data for table `gallerycats`
---
-
-INSERT INTO `gallerycats` (`id`, `title`, `parent_id`) VALUES
-(18, 'at kathmandu', 17),
-(16, 'bad food', 13),
-(12, 'Cake ', 7),
-(17, 'clothes distribution', 0),
-(13, 'food addiction', 0),
-(14, 'good food', 13);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -75,15 +63,7 @@ CREATE TABLE IF NOT EXISTS `galleryimgs` (
   `title` varchar(100) NOT NULL,
   `img` varchar(650) NOT NULL,
   `cat_id` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
-
---
--- Dumping data for table `galleryimgs`
---
-
-INSERT INTO `galleryimgs` (`id`, `title`, `img`, `cat_id`) VALUES
-(2, 'ktmimg', '59287414_37328.jpg', 18),
-(3, 'me', '78024597_23743.jpg', 18);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -256,18 +236,18 @@ CREATE TABLE IF NOT EXISTS `updates` (
   `description` text NOT NULL,
   `image` varchar(255) NOT NULL,
   `added_on` date NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=25 ;
 
 --
 -- Dumping data for table `updates`
 --
 
 INSERT INTO `updates` (`id`, `act_id`, `title`, `slug`, `description`, `image`, `added_on`) VALUES
-(10, 28, 'Islamic sangh Nepal at Bhrikuti Mandap (International book fare)', 'Islamic_sangh_Nepal_at_Bhrikuti_Mandap__International_book_fare_', '<p>Subhan Allah! By Allah&#39;s grace we could see the thirst of people here in Kathmandu (International Book fare) to know Islam. We were pleased to see the huge gathering of people in our stall to get a copy of Qur&#39;an. Alhamdulillah.</p><p>It is therefore, we would like to remind Muslim brothers and sisters, that we are not doing our duty of reaching out to our non-muslims brothers and sisters. And most of our visitors commented us that it&#39;s a matter of great joy to see the Islamic books in Nepali, which shows their interest in knowing and understanding Islam.</p><p>We need to wake up, and reach out to the world with the message of Islam. Insha Allah!</p>', '646351_238162.jpg', '2014-05-30'),
-(11, 23, 'Great Indian Da''ee Abdullah Tariq addessing Students at Islami Sangh Nepal', 'Great_Indian_Da_ee_Abdullah_Tariq_addessing_Students_at_Islami_Sangh_Nepal', '<p>Er. Abdullah Tariq has visited Nepal today to support and train the Muslims of Nepal in the Da&#39;waa. He will have varity of trainings and speeches in Kathmandu at various locations. He will be addressing students every evening (starting from today) at 7:30 PM in the training hall of Islami Sangh Nepal. He will further join us in the Book fare (Bhrikuti Mandap) tomorrow at 11:00 and guide us with his experience. He will also deliver a speech at Bhrikuti Mandap stage a day after tomorrow following with various of other programs.</p><p>We request all of our viewers to take full advatage of these events. An opportunity like this will not come time and again.</p><p>May Allah guide Mr. Abdullah Tariq and give him best rewards for his hard works.</p>', '967166_269928.jpg', '2014-05-31'),
-(12, 22, 'Er. Abdullah Tariq at Bhrikuti Mandap (International Book Fare)', 'Er__Abdullah_Tariq_at_Bhrikuti_Mandap__International_Book_Fare_', '<p>Respected Er. Abdullah Tariq, visisted the book stall of Islami Sangh Nepal at Bhrikuti Mandap today. He spent hours of his precious time with us participating in Da&#39;waa to non Muslims and training to the members of the stall. We that him for his participation and for his guidelines for the members of the book stall.</p><p>We further would like to invite all of our viewers to participate in his speech starting from 4:00 PM tomorrow at Bhrikuti Mandap stage. The program is open for all people of any faith. This program will be followed by his training program at Islami Sangh Nepal at 7:30 PM.<br />&nbsp;</p>', '996095_225341.jpg', '2014-06-01'),
-(13, 23, 'Er. Abdullah Tariq, Public lecture at Bhrikuti Mandap', 'Sample_title_5_goes_here', '<p><em>Respected Er. Abdullah Tariq, delivered a speech on the topic, &quot;Islam For All&quot; at Bhrikuti Mandap program hall today. The program was an open participation program, where more that 100 people participated. People were shocked to hear him so sound in Vedas and other Hindu scriptures. We could hear the comments from people like, &quot;This is how a program should be like!&quot;.</em></p><p><em>The program was followed by an open question and answer session where some of the visitors participated in it. As a whole the program was successful and fruitfull as well.</em></p>', '345765_347250.jpg', '2014-05-28'),
-(14, 23, 'Concluded Four Days PPM at Kathmandu', 'Concluded_Four_Days_PPM_at_Kathmandy', '<p><em><strong>Four days Project, Planning and Management Program was organized at Bagbazar,Kathmandu on 14th-17th February for NGO officers and Students by Human Development Academy (HuDA) Nepal in the sponsorship of WAMY Nepal.</strong></em></p><p>&nbsp;</p>', '102951_373958.jpg', '2015-03-03');
+(10, 28, 'Islamic sangh Nepal at Bhrikuti Mandap (International book fare)', 'Islamic_sangh_Nepal_at_Bhrikuti_Mandap__International_book_fare_', '<p>Subhan Allah! By Allah&#39;s grace we could see the thirst of people here in Kathmandu (International Book fare) to know Islam. We were pleased to see the huge gathering of people in our stall to get a copy of Qur&#39;an. Alhamdulillah.</p><p>It is therefore, we would like to remind Muslim brothers and sisters, that we are not doing our duty of reaching out to our non-muslims brothers and sisters. And most of our visitors commented us that it&#39;s a matter of great joy to see the Islamic books in Nepali, which shows their interest in knowing and understanding Islam.</p><p>We need to wake up, and reach out to the world with the message of Islam. Insha Allah!</p>', '167593_311431.jpg', '2014-05-30'),
+(11, 23, 'Great Indian Da''ee Abdullah Tariq addessing Students at Islami Sangh Nepal', 'Great_Indian_Da_ee_Abdullah_Tariq_addessing_Students_at_Islami_Sangh_Nepal', '<p>Er. Abdullah Tariq has visited Nepal today to support and train the Muslims of Nepal in the Da&#39;waa. He will have varity of trainings and speeches in Kathmandu at various locations. He will be addressing students every evening (starting from today) at 7:30 PM in the training hall of Islami Sangh Nepal. He will further join us in the Book fare (Bhrikuti Mandap) tomorrow at 11:00 and guide us with his experience. He will also deliver a speech at Bhrikuti Mandap stage a day after tomorrow following with various of other programs.</p><p>We request all of our viewers to take full advatage of these events. An opportunity like this will not come time and again.</p><p>May Allah guide Mr. Abdullah Tariq and give him best rewards for his hard works.</p>', '223486_174075.jpg', '2014-05-31'),
+(12, 22, 'Er. Abdullah Tariq at Bhrikuti Mandap (International Book Fare)', 'Er__Abdullah_Tariq_at_Bhrikuti_Mandap__International_Book_Fare_', '<p>Respected Er. Abdullah Tariq, visisted the book stall of Islami Sangh Nepal at Bhrikuti Mandap today. He spent hours of his precious time with us participating in Da&#39;waa to non Muslims and training to the members of the stall. We that him for his participation and for his guidelines for the members of the book stall.</p><p>We further would like to invite all of our viewers to participate in his speech starting from 4:00 PM tomorrow at Bhrikuti Mandap stage. The program is open for all people of any faith. This program will be followed by his training program at Islami Sangh Nepal at 7:30 PM.<br />&nbsp;</p>', '530581_727154.jpg', '2014-06-01'),
+(13, 23, 'Er. Abdullah Tariq, Public lecture at Bhrikuti Mandap', 'Sample_title_5_goes_here', '<p><em>Respected Er. Abdullah Tariq, delivered a speech on the topic, &quot;Islam For All&quot; at Bhrikuti Mandap program hall today. The program was an open participation program, where more that 100 people participated. People were shocked to hear him so sound in Vedas and other Hindu scriptures. We could hear the comments from people like, &quot;This is how a program should be like!&quot;.</em></p><p><em>The program was followed by an open question and answer session where some of the visitors participated in it. As a whole the program was successful and fruitfull as well.</em></p>', '806036_531405.jpg', '2014-05-28'),
+(14, 0, 'Concluded Four Days PPM at Kathmandu', 'Concluded_Four_Days_PPM_at_Kathmandy', '<p><em><strong>Four days Project, Planning and Management Program was organized at Bagbazar,Kathmandu on 14th-17th February for NGO officers and Students by Human Development Academy (HuDA) Nepal in the sponsorship of WAMY Nepal.</strong></em></p><p>&nbsp;</p>', '838610_228897.jpg', '2015-03-03');
 
 --
 -- Indexes for dumped tables
@@ -340,12 +320,12 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 -- AUTO_INCREMENT for table `gallerycats`
 --
 ALTER TABLE `gallerycats`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=19;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `galleryimgs`
 --
 ALTER TABLE `galleryimgs`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `images`
 --
@@ -375,7 +355,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 -- AUTO_INCREMENT for table `updates`
 --
 ALTER TABLE `updates`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=25;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
