@@ -1,6 +1,6 @@
 <div class="main clearfix">
 <div class="container">
-<div class="row service-box margin-bottom-40">
+<div class="row service-box margin-bottom-40"  style="margin:20px 0;">
 <h2 ><span>Projects<small> <?php echo $pages['Project']['title'];?></small></h2>
 <div class="col-md-4 col-sm-4 col-xs-12">
 <div><img src="<?php echo $this->webroot;?>doc/thumblarge/<?php echo $pages['Project']['image'];?>" /></div>

@@ -74,8 +74,41 @@
 	-moz-transition: all 0.7s ease-in-out;
 	-o-transition: all 0.7s ease-in-out;
 	transition: all 0.7s ease-in-out;
+    width: 100%;
 }
 
+.mix-inner {
+    position: relative;
+}
+
+.mix-inner h3 {
+    bottom: 0;
+    position: absolute;
+}
+
+.mix-inner h3 {
+  bottom: 0;
+  position: absolute;
+  background: rgba(87,142,190, 0.8);
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 0;
+  color: #fff;
+  text-transform: capitalize;
+  font-size: 18px;
+      -webkit-transition: all 0.7s ease-in-out;
+	-moz-transition: all 0.7s ease-in-out;
+	-o-transition: all 0.7s ease-in-out;
+	transition: all 0.7s ease-in-out;
+}
+
+.mix-inner > a:hover h3 {
+    background: rgba(48,108,160,0.88);
+        -webkit-transition: all 0.7s ease-in-out;
+	-moz-transition: all 0.7s ease-in-out;
+	-o-transition: all 0.7s ease-in-out;
+	transition: all 0.7s ease-in-out;
+}
 
 .mix-inner > a:hover img {
     -webkit-transform: scale(1.1);

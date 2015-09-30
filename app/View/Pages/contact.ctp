@@ -7,9 +7,6 @@
         							<div class="space20">
         							</div>
         							<h3 class="form-section">Contacts</h3>
-        							<p>
-        								 Lorem ipsum dolor sit amet, Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat consectetuer adipiscing elit.
-        							</p>
         							<div class="well">
         								<h4>Address</h4>
         								<address>
@@ -62,9 +59,6 @@
         							<!-- BEGIN FORM-->
         							<form action="<?php echo $this->webroot; ?>Pages/contact" method="post">
         								<h3 class="form-section">Feedback</h3>
-        								<p>
-        									 Lorem ipsum dolor sit amet, Ut wisi enim ad minim veniam, quis nostrud exerci. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat consectetuer
-        								</p>
         								<div class="form-group">
         									<div class="input-icon">
         										<i class="fa fa-check"></i>

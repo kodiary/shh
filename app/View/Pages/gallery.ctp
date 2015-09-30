@@ -1,6 +1,7 @@
 <div class="main clearfix">
     <div class="container">
         <div class="row service-box margin-bottom-40">
+        <div class="col-md-12 col-sm-12 col-xs-12">
             <h2 class="title"><span>Activities Gallery  <?php if($year){?> > <?php echo $year; }?></span></h2>
             <div class="row mix-grid thumbnails">
                     <?php  foreach ($category as $cat)
@@ -30,6 +31,7 @@
                             ?>
                         
              
+             </div>
              </div>
         </div>
     </div>

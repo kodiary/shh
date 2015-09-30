@@ -1,9 +1,8 @@
 <div class="main clearfix">
 <div class="container">
-<div class="row service-box margin-bottom-40">
+<div class="row service-box margin-bottom-40" style="margin:20px 0;">
 <div class="col-md-12 col-sm-12 col-xs-12">
 <h2>All Events</h2>
-        <p>&nbsp;</p>
         <div class="content-page">
 <div class="row">
 <div class="description">
