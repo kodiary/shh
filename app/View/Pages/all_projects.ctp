@@ -1,9 +1,8 @@
 <div class="main clearfix">
 <div class="container">
-<div class="row service-box margin-bottom-40">
+<div class="row service-box margin-bottom-40"  style="margin:20px 0;">
 
 <h2>All Projects</h2>
-        <p>&nbsp;</p>
         <div class="content-page">
 <div class="row">
 <div class="description">

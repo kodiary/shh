@@ -15,8 +15,8 @@
                     <a href="<?php echo $this->webroot; ?>pages/catDetail/<?php echo $cat['Gallerycat']['id']; ?>">
                     
                     
-                    <img class="img-responsive" src="<?php echo $this->webroot;?>profile_resize/<?php echo $randimg; ?>" alt="">
-                      
+                   <div class="portfolio-index"> <img class="img-responsive" src="<?php echo $this->webroot;?>profile_resize/<?php echo $randimg; ?>" alt="">
+                      </div>
                       <h3><?php echo $cat['Gallerycat']['title']; ?></h3>
                       </a>
                 </div>
@@ -29,8 +29,6 @@
         </div>
         </div>
         </div>        <!-- END SERVICE BOX -->
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
         <div class="row quote-v1 margin-bottom-30">
     <div class="col-md-9 col-sm-9 col-xs-12">
     <span>Latest Events</span>
@@ -39,7 +37,6 @@
     <a class="btn-transparent" href="<?php echo $this->webroot; ?>event">View All</a>
     </div>
     </div>
-        <p>&nbsp;</p>
         <div class="content-page">
         <div class="row">
         <?php
