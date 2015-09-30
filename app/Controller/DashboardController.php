@@ -1,6 +1,4 @@
 <?php
-
-
 App::uses('Rsize','Lib');
 App::load("Rsize");
 
