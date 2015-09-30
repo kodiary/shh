@@ -18,7 +18,7 @@
                                             <strong><?php echo $p['Media']['title'];?></strong><br />
                                             <span style="font-size: 12px;color:#578ebe;">
                                             Uploaded on: <?php echo $p['Media']['added_on'];?></span></div>
-                                            <div class="action right col-md-1 col-sm-1 col-xs-12"><a href="javascript:void(0)" class="open-popup-link btn media"  onclick="$('.popover').html('<iframe src='http://docs.google.com/gview?url=<?php echo $this->Html->url('/', true);?>/doc/'.<?php echo $p['Media']['file'];?>.'&embedded=true' style='width:600px; height:500px;' frameborder='0'></iframe>')" >View</a></div>
+                                            <div class="action right col-md-1 col-sm-1 col-xs-12"><a href="javascript:void(0)" class="open-popup-link btn media" >View</a></div>
                                             <div class="clearfix"></div>
                                             </div>
                                             <?php }
@@ -48,3 +48,14 @@
                                 <style>
        
 	</style>
+    <script type="text/javascript">
+  $(function(){
+    
+    $(".media").click(function(){
+      
+  $(".popover").html('<iframe src="http://docs.google.com/gview?url=<?php echo $this->Html->url('/', true);?>/doc/<?php echo $p['Media']['file'];?>&embedded=true" style="width:600px; height:500px;" frameborder="0"></iframe>');
+    
+    })
+  })
+</script>
+

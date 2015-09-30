@@ -60,7 +60,7 @@
    
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53551fdf0354dd89" async="async"></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- BEGIN HEADER -->
     <div class="header">
       <div class="container">
