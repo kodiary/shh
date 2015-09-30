@@ -53,8 +53,7 @@
                 foreach($updates as $up)
                 {
                     ?>
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="row">
+                    
                     <div class="events col-md-12 col-sm-12 col-xs-12">
             
                 <div class="row">
@@ -81,8 +80,7 @@
                         <div class="clearfix"></div>
                     </div>
                     </div>
-                    </div>
-                    </div>
+                    
                     <?php
                 }
                 ?>     
