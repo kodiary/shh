@@ -19,7 +19,7 @@
                                             <span style="font-size: 12px;color:#578ebe;">
                                             Uploaded on: <?php echo $p['Media']['added_on'];?></span></div>
 
-                                            <div class="action right col-md-1 col-sm-1 col-xs-12"><a href="javascript:void(0)" class="open-popup-link btn media" class="fancybox-button" data-rel="fancybox-button" >View</a></div>
+                                            <div class="action right col-md-1 col-sm-1 col-xs-12"><a href="javascript:void(0)" class="open-popup-link btn media fancybox-button" data-rel="fancybox-button" >View</a></div>
 
                                             
 
