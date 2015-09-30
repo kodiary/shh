@@ -75,7 +75,7 @@
                                 </li>
                                 
                             </ul>
-                            <?php echo substr($up['Update']['description'],0,150).'...' ?>
+                            <?php echo substr(strip_tags($up['Update']['description']),0,150).'...' ?> 
                             <a class="more" href="<?php echo $this->webroot;?>pages/updates/<?php echo $up['Update']['slug'];?>">Read more </a>
                         </div>
                         <div class="clearfix"></div>
@@ -117,7 +117,6 @@
                 </em>
                 <a class="recent-work-description" href="#">
                   <strong><?php echo $pro['Project']['title'];?></strong>
-                  <b>shh<?php // echo $pro['Project']['description'];?></b>
                 </a>
               </div>
                 <?php } ?>
