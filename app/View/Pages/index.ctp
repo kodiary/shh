@@ -46,8 +46,7 @@
                 foreach($updates as $up)
                 {
                     ?>
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="row">
+                    
                     <div class="events col-md-12 col-sm-12 col-xs-12">
             
                 <div class="row">
@@ -68,14 +67,13 @@
                                 </li>
                                 
                             </ul>
-                            <?php echo substr($up['Update']['description'],0,150).'...' ?>
+                            <?php echo substr(strip_tags($up['Update']['description']),0,150).'...' ?> 
                             <a class="more" href="<?php echo $this->webroot;?>pages/updates/<?php echo $up['Update']['slug'];?>">Read more </a>
                         </div>
                         <div class="clearfix"></div>
                     </div>
                     </div>
-                    </div>
-                    </div>
+                    
                     <?php
                 }
                 ?>     
@@ -110,7 +108,6 @@
                 </em>
                 <a class="recent-work-description" href="#">
                   <strong><?php echo $pro['Project']['title'];?></strong>
-                  <b>shh<?php // echo $pro['Project']['description'];?></b>
                 </a>
               </div>
                 <?php } ?>

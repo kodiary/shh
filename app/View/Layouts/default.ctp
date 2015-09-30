@@ -145,10 +145,9 @@
     <?php 
     }?>
 
-    <div class="main clearfix">
         <?php echo $this->fetch('content'); ?>
       
-    </div>
+
 
     <!-- BEGIN PRE-FOOTER -->
     <div class="pre-footer">
