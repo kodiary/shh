@@ -12,3 +12,6 @@ CakePHP 2
 /app/Config/database.php
 /vendors/*
 /nbproject/private/
+/app/webroot/profile
+/app/webroot/profile_resize1
+/app/webroot/profile_resize
