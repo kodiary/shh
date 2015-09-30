@@ -48,8 +48,9 @@
   <link href="<?php echo $this->webroot;?>assets/frontend/pages/css/style-revolution-slider.css" rel="stylesheet"><!-- metronic revo slider styles -->
   <link href="<?php echo $this->webroot;?>assets/frontend/layout/css/style-responsive.css" rel="stylesheet">
   <link href="<?php echo $this->webroot;?>assets/frontend/pages/css/portfolio.css" rel="stylesheet">
-  <link href="<?php echo $this->webroot;?>assets/frontend/layout/css/themes/red.css" rel="stylesheet" id="style-color">
   <link href="<?php echo $this->webroot;?>assets/frontend/layout/css/custom.css" rel="stylesheet">
+  
+  <link href="<?php echo $this->webroot;?>css/custom.css" rel="stylesheet">
   <!-- Theme styles END -->
 </head>
 <!-- Head END -->
@@ -196,7 +197,7 @@
       <div class="container">
         <div class="row">
           <!-- BEGIN COPYRIGHT -->
-          <div class="col-md-6 col-sm-6 padding-top-10">
+          <div class="col-md-12 col-sm-12 padding-top-10">
             2015 © Social Helping Hands Nepal. <a href="#">Powered By Kodiary, Nepal</a>
           </div>
           <!-- END COPYRIGHT -->
