@@ -1,4 +1,10 @@
 <?php
+<<<<<<< HEAD
+    App::uses('Resize', 'Lib');
+=======
+App::uses('Rsize','Lib');
+App::load("Rsize");
+>>>>>>> 9168430af065953c020ffcea17d34e5e48cabc73
 class DashboardController extends AppController
 {
     
@@ -385,8 +391,21 @@ class DashboardController extends AppController
                 $file = $_FILES['file']['name'];
                  $arr = explode('.',$file);
                 $ext = end($arr);
-                $rand = rand(100000,999999).'_'.rand(100000,999999).'.'.$ext;
-                move_uploaded_file($_FILES['file']['tmp_name'],APP.'webroot/doc/'.$rand);
+                 $rand = rand(100000,999999).'_'.rand(100000,999999).'.'.$ext;
+                $path=APP.'webroot/doc/'.$rand;
+                $resize = $rand.'_thumb.'.$ext;
+                $thumbpath=APP.'webroot/doc/thumb'.$resize;
+                
+               
+                move_uploaded_file($_FILES['file']['tmp_name'],$path);
+            $resizeObj = new resize($path);
+    $resizeObj -> resizeImage(250, 180,'exact');
+    $resizeObj -> saveImage($thumbpath, 100);
+    unset($resizeObj);
+    $resizeObj = new resize($path);
+    $resizeObj -> resizeImage(600, 432,'exact');
+    $resizeObj -> saveImage($thumbpath, 100);
+    unlink($path);
                 $_POST['image'] = $rand;
                 $_POST['added_on'] = date('Y-m-d');
                 $whiteSpace = '';  //if you dnt even want to allow white-space set it to ''
@@ -572,7 +591,6 @@ class DashboardController extends AppController
         function addCategory(){
             $this->loadModel('Gallerycats');
             $arr['title']=$_POST['category-name'];
-          // debug($arr);
             $this->Gallerycats->create();
             $this->Gallerycats->save($arr);
             $this->redirect('/dashboard/gallery');
@@ -616,25 +634,37 @@ class DashboardController extends AppController
             $this->redirect('/dashboard/gallery');
             }
         }
-        function addCategoryImg($id){
-           
-             if(isset($_POST) && $_POST)
+        function addCategoryImg($id)
+        {       
+            if(isset($_FILES['image']['name']) && $_FILES['image']['name'])
             {
             $name = $_FILES['image']['name'];
-           
             $arr = explode('.',$name);
             $ext = end($arr);
-            $rand = rand(10000000,99999999).'_'.rand(10000,99999).'.'.$ext;
-            move_uploaded_file($_FILES['image']['tmp_name'],APP.'webroot/galleryimgs/'.$rand);
+            $rand = rand(1000000,9999999);
+            $filename = $rand.'.'.$ext;
+            $path = APP.'webroot/profile/'.$filename;
+            move_uploaded_file($_FILES['image']['tmp_name'],$path);
+            $resizeObj = new Resize($path);
+            $resizeObj -> resizeImage(250, 180,'exact');
+            $resizeObj -> saveImage(APP.'webroot/profile_resize/'.$filename, 100);
+            //echo $path;die();
+            unset($resizeObj);
+            $resizeObj = new Resize($path);
+            $resizeObj -> resizeImage(600, 432,'exact');
+            $resizeObj -> saveImage('profile_resize1/'.$filename, 100);
+            unlink($path);
+            }
+             
             $this->loadModel('Galleryimgs');
-            $arr['img']=$rand;
+            $arr['img']=$filename;
             $arr['title']=$_POST['category-img-title'];
             $arr['cat_id']=$id;
             
             $this->Galleryimgs->create();
             $this->Galleryimgs->save($arr);
             $this->redirect('/dashboard/gallery');
-            }
+            
         }
         function deleteImg($id){
             

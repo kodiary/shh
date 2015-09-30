@@ -157,7 +157,9 @@
           <!-- BEGIN BOTTOM ABOUT BLOCK -->
           <div class="col-md-4 col-sm-6 pre-footer-col">
             <h2>About us</h2>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam sit nonummy nibh euismod tincidunt ut laoreet dolore magna aliquarm erat sit volutpat.</p>
+            <p>Social Helping Hands, Nepal was founded recently in 2015 with the purpose of striving provide utmost aid and support to poor, victims and needy of Nepal. With the slogan of "Helping in need is Religion indeed", SHH is always concerned about the poors and needy through out the country.
+            <a href="<?php echo $this->webroot;?>Pages/detail/about">Read More</a>
+            </p>
 
             
           </div>
@@ -167,11 +169,10 @@
           <div class="col-md-4 col-sm-6 pre-footer-col">
             <h2>Our Contacts</h2>
             <address class="margin-bottom-40">
-              <strong>Address</strong> : Kathmandu, Nepal<br>
-              <strong>Phone</strong> : 123 456 7899<br>
-              <strong>Fax</strong> : 300 323 1456<br>
+              <strong>Address</strong> : Baluwatar,Kathmandu, Nepal<br>
+              <strong>Phone</strong> : +977-9807388399<br>
               <strong>Email</strong> : <a href="mailto:info@shhnepal.org">info@shhnepal.org</a><br>
-              <strong>Skype</strong> : <a href="skype:shhnepal">shhnepal</a>
+              <strong>Skype</strong> : <a href="skype:shhnepal">shhnepal</a>            
             </address>
 
             
