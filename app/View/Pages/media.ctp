@@ -46,7 +46,7 @@
                                     ?>
                                 </div>
                                </div>
-                                <div class="popover">
+                                <div class="popover" style="max-width: 610px;">
                                 
                                 
                                 </div>
@@ -59,7 +59,7 @@
     
     $(".media").click(function(){
       
-  $(".popover").html('<iframe src="http://docs.google.com/gview?url=<?php echo $this->Html->url('/', true);?>/doc/<?php echo $p['Media']['file'];?>&embedded=true" style="width:300; height:300px;" frameborder="0"></iframe>');
+  $(".popover").html('<iframe src="http://docs.google.com/gview?url=<?php echo $this->Html->url('/', true);?>/doc/<?php echo $p['Media']['file'];?>&embedded=true" style="width:580px; height:300px;" frameborder="0"></iframe>');
     
     })
     

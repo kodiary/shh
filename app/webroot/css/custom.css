@@ -153,9 +153,9 @@
 
 .ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-front.ui-draggable.ui-resizable {
   left: 50% !important;
-  margin-left: -150px !important;
+  margin-left: -310px !important;
   top: 20% !important;
-  width: 300px !important;
+  width: 620px !important;
   z-index: 999 !important;
 }
 
