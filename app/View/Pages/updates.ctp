@@ -1,7 +1,7 @@
 <div class="main clearfix">
 <div class="container">
 <div class="row service-box margin-bottom-40">
-<h1 class="title">Event <small><?php echo $pages['Update']['title'];?></small></h1> 
+<h1 class="title col-md-12 col-sm-12 col-xs-12">Event <small><?php echo $pages['Update']['title'];?></small></h1> 
 
 <div class="col-md-4 col-sm-4 col-xs-12"><img src="<?php echo $this->webroot;?>doc/<?php echo $pages['Update']['image'];?>" /></div>
 
