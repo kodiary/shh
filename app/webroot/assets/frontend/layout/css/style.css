@@ -1452,10 +1452,12 @@ Pre-Footer and pre-footer elements
 .pre-footer a {
 	color: #FFF;
 }
-.pre-footer h2,
-.ecommerce .pre-footer h2 {
-	font-size: 21px;
-	color: #FFF;
+.pre-footer h2, .ecommerce .pre-footer h2 {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px !important;
+  text-transform: uppercase;
 }
 .pre-footer p {
 	margin-bottom: 20px;
@@ -1504,11 +1506,11 @@ Pre-Footer and pre-footer elements
 }
 .pre-footer .social-icons li a, 
 .pre-footer a.social-icon {
-  transition: all 0.1s ease-in-out !important;
-  -o-transition: all 0.1s ease-in-out !important;
-  -ms-transition: all 0.1s ease-in-out !important;
-  -moz-transition: all 0.1s ease-in-out !important;
-  -webkit-transition: all 0.1s ease-in-out !important;
+  transition: all 0.4s ease-in-out !important;
+  -o-transition: all 0.4s ease-in-out !important;
+  -ms-transition: all 0.4s ease-in-out !important;
+  -moz-transition: all 0.4s ease-in-out !important;
+  -webkit-transition: all 0.4s ease-in-out !important;
 }
 .pre-footer .social-icons li a:hover {
   opacity: 1;

@@ -187,9 +187,31 @@
 
           <!-- BEGIN TWITTER BLOCK --> 
           <div class="col-md-4 col-sm-6 pre-footer-col">
-            <h2 class="margin-bottom-0">Share Us</h2>
+            <h2 class="margin-bottom-10 share-us">Share Us</h2>
             <!-- Go to www.addthis.com/dashboard to customize your tools -->
-<div class="addthis_sharing_toolbox"></div>
+<div class="addthis_sharing_toolbox">	<ul class="social-icons margin-bottom-10">
+        									<li>
+        										<a href="#" data-original-title="facebook" class="facebook">
+        										</a>
+        									</li>
+        									<li>
+        										<a href="#" data-original-title="Goole Plus" class="googleplus">
+        										</a>
+        									</li>
+        									<li>
+        										<a href="#" data-original-title="linkedin" class="linkedin">
+        										</a>
+        									</li>
+        									<li>
+        										<a href="#" data-original-title="skype" class="skype">
+        										</a>
+        									</li>
+        									<li>
+        										<a href="#" data-original-title="twitter" class="twitter">
+        										</a>
+        									</li>
+        								</ul>
+                                        </div>
           </div>
           <!-- END TWITTER BLOCK -->
         </div>
