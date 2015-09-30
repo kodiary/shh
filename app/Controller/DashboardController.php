@@ -547,12 +547,12 @@ class DashboardController extends AppController
             $this->loadModel('Project');
             $arr['conditions']=array('id'=>$id);
            $q= $this->Project->find('first',$arr);
-            $path=APP.'webroot/doc/thumb/'.$q['Update']['image'];
-             $path1=APP.'webroot/doc/thumblarge/'.$q['Update']['image'];
+         $path=APP.'webroot/doc/thumb/'.$q['Project']['image'];
+             $path1=APP.'webroot/doc/thumblarge/'.$q['Project']['image'];
              unlink($path);
              unlink($path1);
-            $this->Project->delete($id);
-            $this->redirect('project');
+            $this->Project->delete($id); 
+            $this->redirect('projects');
         }
         function slider(){
             $this->loadModel('Slider');

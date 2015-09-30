@@ -12,7 +12,7 @@ Current Image<br />
 <hr />
 <input type="submit" value="Save" name="submit" class="btn btn-primary btn-large" />
 </form>
-<script>
+<script> 
 $(function(){
    $('#myform').validate(); 
 });
