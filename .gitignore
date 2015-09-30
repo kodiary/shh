@@ -15,3 +15,4 @@ CakePHP 2
 /app/webroot/profile
 /app/webroot/profile_resize1
 /app/webroot/profile_resize
+*.jpg
