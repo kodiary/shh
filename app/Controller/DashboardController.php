@@ -689,7 +689,7 @@ class DashboardController extends AppController
             $ext = end($arr);
             $rand = rand(1000000,9999999);
             $filename = $rand.'.'.$ext;
-            $path = APP.'webroot/profile/'.$filename;
+            $path = APP.'webroot/profile/'.$filename; 
             move_uploaded_file($_FILES['image']['tmp_name'],$path);
             $resizeObj = new Resize($path);
             $resizeObj -> resizeImage(250, 180,'exact');
