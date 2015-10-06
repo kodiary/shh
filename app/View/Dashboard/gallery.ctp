@@ -1,4 +1,4 @@
-<h1>Gallery</h1>
+    <h1>Gallery</h1>
 <a class="btn btn-success addcat" href="javascript:void(0)">Add Gallery Category</a>
     <div class="category-add" style="display:none;">
     <form id="myform" method="post" action="/shh/dashboard/addCategory" >
